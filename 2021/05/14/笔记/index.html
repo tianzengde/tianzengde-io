@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title> 梦里花落的博客</title>
+      <title>面试笔记 |  梦里花落的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -52,6 +52,16 @@
   data-scroll-reveal
 >
   <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  面试笔记
+</h1>
+ 
+
+      
+    </header>
      
     <div class="article-meta">
       <a href="/tianzengde-io/2021/05/14/%E7%AC%94%E8%AE%B0/" class="article-date">
@@ -86,8 +96,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="面试笔记"><a href="#面试笔记" class="headerlink" title="面试笔记"></a>面试笔记</h1><hr>
-<p>[toc]</p>
+  <p>[toc]</p>
 <h4 id="PEP8规范"><a href="#PEP8规范" class="headerlink" title="PEP8规范"></a>PEP8规范</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">什么是PEP8规范？</span><br><span class="line">	PEP8规范简单来说就是一种编码规范，是为了使代码“更好看”，更容易被理解和阅读。</span><br><span class="line">PEP8规范</span><br><span class="line">    1 每一级缩进使用4个空格（编辑器都可以完成此功能），不使用Tap，更不能混合使用Tap和空格。</span><br><span class="line">    2 每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。</span><br><span class="line">    3 不能使用单字符作为变量名，变量名要做到见名识意</span><br><span class="line">    4 模块导入的顺序：按标准、三方和自己编写顺序依次导入，之间空一行。</span><br><span class="line">    5 不要在一句import中多个库，比如import os, sys不推荐</span><br><span class="line">    6 类的首字母大写，函数的首字母小写</span><br><span class="line">    7 注释必须要有</span><br><span class="line">    8 函数命名要遵循规范</span><br><span class="line">    10 尽可能使用‘is’‘is not’取代‘==’，比如if x is not None 要优于if x。</span><br><span class="line">    11 异常中try的代码尽可能少。</span><br></pre></td></tr></table></figure>
 
 <h4 id="什么是深拷贝，什么是浅拷贝？"><a href="#什么是深拷贝，什么是浅拷贝？" class="headerlink" title="什么是深拷贝，什么是浅拷贝？"></a>什么是深拷贝，什么是浅拷贝？</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">浅拷贝：copy.copy()</span><br><span class="line">深拷贝：copy.deepcopy()</span><br><span class="line">	<span class="comment"># 浅拷贝只拷贝第一层，修改第一层的内容互不影响，修改深层次的会被影响，浅拷贝的内存地址是相同的</span></span><br><span class="line">    <span class="comment"># 深拷贝相当于递归性质的浅拷贝，相当于在内存中生成了一个完全相同的内容，修改其中的一个变量不会影响另一个变量</span></span><br><span class="line">    <span class="comment"># 对于数字 字符串而言，赋值、浅拷贝、深拷贝无意义，因为永远指向同一内存地址</span></span><br></pre></td></tr></table></figure>
