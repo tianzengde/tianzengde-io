@@ -45,7 +45,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-面试笔记"
+  id="post-笔记"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -54,7 +54,7 @@
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/tianzengde-io/2021/05/14/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/" class="article-date">
+      <a href="/tianzengde-io/2021/05/14/%E7%AC%94%E8%AE%B0/" class="article-date">
   <time datetime="2021-05-14T03:45:36.184Z" itemprop="datePublished">2021-05-14</time>
 </a>   
 <div class="word_count">
@@ -226,7 +226,7 @@
 
 <h4 id="回滚日志（undo-log）"><a href="#回滚日志（undo-log）" class="headerlink" title="回滚日志（undo log）"></a>回滚日志（undo log）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">undo log可以对数据进行回滚，还可以实现MVCC</span><br><span class="line"></span><br><span class="line">当事务对数据库进行修改时，InnoDB不仅会记录redo log，还会生成对应的undo log日志</span><br><span class="line">如果事务执行失败或者调用了rollback，导致事务回滚，就可以利用undo log中的信息将数据回滚到事务操作之前的样子</span><br></pre></td></tr></table></figure>
 
-<h4 id="bin-log-和-redo-log的区别"><a href="#bin-log-和-redo-log的区别" class="headerlink" title="bin-log 和 redo log的区别"></a>bin-log 和 redo log的区别</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bin-log二进制日志是储存引擎上层产生的，不管是什么储存引擎，只要对数据库进行修改，都会产生二进制日志，记录的是SQL语句的原始逻辑</span><br><span class="line">redolog是InnoDB层产生的一种物理日志，记录的的是对某个数据进行了什么样的修改</span><br><span class="line"></span><br><span class="line">bin-log二进制日志比redolog先记录</span><br><span class="line"></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0HtpNl0ygqvNpWB78g0sPVhF5a3maE7BTlLNpg7w0PNfoaLvTzCQ/jwr7P84k9G3KsS6zjlxARizhD43nTVksmEWbUEvaik2Dvr5H1FXa5J1+DUY5on1RKecxSZkQ7zn0/3+Gmy4ddKzE25kWITwxn81HsudF9gMbMeKSeTO39WeZ9IIEDzWaoB9OSgdu/T1UmrHe5e9MYexKAkqmqxpSqUhDERGp/1ftnHw6HCIN1Bo43jgnVNwqFOGgyHR9w5BsS9qWF0g19V4SqLAg+mEGM/Hj6WZEuUvML6mgL54wW+0oTeV4DjplQKfWprys0ErJWe8WpyXmCEokp6ROt3gbYXrHff6eSpfKwv2Apy6sI8jmxEkjPDAPV5+6SzsWEbGw5y/1Y2OuMyFDuWMnDmSvb+YalkShfYjv8zgKP25b9XSWh4kguZNnwnM1G0iR+ttxnkN+uYNzUSWFCquML2xDifE5qeaS4wR4hOF4ysC0JoS6gkWYM3BdBkk7YG+eSUs= 2876301284@qq.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="bin-log-和-redo-log的区别"><a href="#bin-log-和-redo-log的区别" class="headerlink" title="bin-log 和 redo log的区别"></a>bin-log 和 redo log的区别</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bin-log二进制日志是储存引擎上层产生的，不管是什么储存引擎，只要对数据库进行修改，都会产生二进制日志，记录的是SQL语句的原始逻辑</span><br><span class="line">redolog是InnoDB层产生的一种物理日志，记录的的是对某个数据进行了什么样的修改</span><br><span class="line"></span><br><span class="line">bin-log二进制日志比redolog先记录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
  
       <!-- reward -->
@@ -298,7 +298,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/05/14/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/05/14/%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
