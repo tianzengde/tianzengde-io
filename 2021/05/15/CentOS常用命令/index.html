@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>About Me |  梦里花落的博客</title>
+      <title>CentOS7常用命令 |  梦里花落的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -46,8 +46,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="page-"
-  class="article article-type-page"
+  id="post-CentOS常用命令"
+  class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -57,16 +57,63 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  About Me
+  CentOS7常用命令
 </h1>
  
 
       
     </header>
-       
+     
+    <div class="article-meta">
+      <a href="/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2021-05-15T14:24:03.074Z" itemprop="datePublished">2021-05-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/">Linux操作</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">284</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
-  <h4 id="姓名-田增德"><a href="#姓名-田增德" class="headerlink" title="姓名: 田增德"></a>姓名: 田增德</h4><h5 id="QQ-2876301284"><a href="#QQ-2876301284" class="headerlink" title="QQ:2876301284"></a>QQ:2876301284</h5><h5 id="邮箱：-x32-56-x37-54-51-48-49-50-x38-x34-x40-113-113-46-99-x6f-x6d"><a href="#邮箱：-x32-56-x37-54-51-48-49-50-x38-x34-x40-113-113-46-99-x6f-x6d" class="headerlink" title="邮箱：&#x32;&#56;&#x37;&#54;&#51;&#48;&#49;&#50;&#x38;&#x34;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#x6d;"></a>邮箱：<a href="mailto:&#x32;&#56;&#x37;&#54;&#51;&#48;&#49;&#50;&#x38;&#x34;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#x6d;">&#x32;&#56;&#x37;&#54;&#51;&#48;&#49;&#50;&#x38;&#x34;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#x6d;</a></h5> 
+  <h1 id="CentOS常用命令"><a href="#CentOS常用命令" class="headerlink" title="CentOS常用命令"></a>CentOS常用命令</h1><hr>
+<p>[toc]</p>
+<h3 id="端口相关"><a href="#端口相关" class="headerlink" title="端口相关"></a>端口相关</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看监听(Listen)的端口</span></span><br><span class="line">netstat -lntp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看所有建立的TCP连接</span></span><br><span class="line">netstat -antp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">lsof -i tcp:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">netstat -lnp|grep <span class="number">8000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看正在全部进程</span></span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定的进程</span></span><br><span class="line">ps aux | grep 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死某个进程</span></span><br><span class="line">kill 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死一类进程</span></span><br><span class="line">killall 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 踢出某个终端  -9 可强制终止</span></span><br><span class="line">pkill -<span class="number">9</span> 程序名 </span><br></pre></td></tr></table></figure>
+
+<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">systemctl status xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">systemctl stop  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载服务</span></span><br><span class="line">systemctl reload xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务开机启动</span></span><br><span class="line">systemctl enable xxx   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设备服务禁止开机启动</span></span><br><span class="line">systemctl disable xxx  </span><br></pre></td></tr></table></figure>
+
+<h3 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动网络服务</span></span><br><span class="line">systemctl start network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#停止网络服务</span></span><br><span class="line">systemctl stop network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#重启网络服务</span></span><br><span class="line">systemctl restart network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看网络服务状态</span></span><br><span class="line">systemctl status network.serivce</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出虚拟环境列表</span></span><br><span class="line">lsvirtualenv</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新虚拟环境</span></span><br><span class="line">mkvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动/ 切换虚拟环境</span></span><br><span class="line">workon [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除虚拟环境</span></span><br><span class="line">rmvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#离开虚拟环境</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+
+ 
       <!-- reward -->
       
     </div>
@@ -130,7 +177,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/about/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -139,6 +186,25 @@
   </div>
 
    
+  <nav class="article-nav">
+    
+      <a href="/tianzengde-io/2021/05/15/CentSO%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            CentOS7软件安装
+          
+        </div>
+      </a>
+    
+    
+      <a href="/tianzengde-io/2021/05/14/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">面试笔记</div>
+      </a>
+    
+  </nav>
+
    
 <!-- valine评论 -->
 <div id="vcomments-box">
@@ -188,7 +254,8 @@
 </style>
 
  
-    
+   
+     
 </article>
 
 </section>
@@ -341,6 +408,22 @@
 <script src="/tianzengde-io/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/tianzengde-io/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link

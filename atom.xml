@@ -6,10 +6,105 @@
   <link href="https://tianzengde.github.io/tianzengde-io/atom.xml" rel="self"/>
   
   <link href="https://tianzengde.github.io/tianzengde-io/"/>
-  <updated>2021-05-14T18:27:27.245Z</updated>
+  <updated>2021-05-15T14:57:10.520Z</updated>
   <id>https://tianzengde.github.io/tianzengde-io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS7软件安装-详细版</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/15/%E8%99%9A%E6%8B%9F%E6%9C%BA_CentOS--%E7%B2%BE%E5%93%81/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/15/%E8%99%9A%E6%8B%9F%E6%9C%BA_CentOS--%E7%B2%BE%E5%93%81/</id>
+    <published>2021-05-15T14:52:49.222Z</published>
+    <updated>2021-05-15T14:57:10.520Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h3 id=&quot;CentOS准备&quot;&gt;&lt;a href=&quot;#CentOS准备&quot; class=&quot;headerlink&quot; title=&quot;CentOS准备&quot;&gt;&lt;/a&gt;CentOS准备&lt;/h3&gt;&lt;h5 id=&quot;1、安装&quot;&gt;&lt;a href=&quot;#1、安装&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/15/03.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/15/03.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-05-15T14:40:56.759Z</published>
+    <updated>2021-05-15T14:41:47.603Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-linux常用命令&quot;&gt;&lt;a href=&quot;#1-linux常用命令&quot; class=&quot;headerlink&quot; title=&quot;1.linux常用命令&quot;&gt;&lt;/a&gt;1.linux常用命令&lt;/h1&gt;&lt;h3 id=&quot;1-1-系统命令&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7软件安装</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/15/CentSO%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/15/CentSO%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</id>
+    <published>2021-05-15T14:36:11.954Z</published>
+    <updated>2021-05-15T14:57:52.281Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CentSO软件安装&quot;&gt;&lt;a href=&quot;#CentSO软件安装&quot; class=&quot;headerlink&quot; title=&quot;CentSO软件安装&quot;&gt;&lt;/a&gt;CentSO软件安装&lt;/h1&gt; &lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="Linux操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7常用命令</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-05-15T14:24:03.074Z</published>
+    <updated>2021-05-15T14:31:54.595Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CentOS常用命令&quot;&gt;&lt;a href=&quot;#CentOS常用命令&quot; class=&quot;headerlink&quot; title=&quot;CentOS常用命令&quot;&gt;&lt;/a&gt;CentOS常用命令&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h3 id=&quot;端口相关&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>面试笔记</title>

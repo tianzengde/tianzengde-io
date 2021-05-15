@@ -1,6 +1,587 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux常用命令</title>
+    <url>/tianzengde-io/2021/05/15/03.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1.linux常用命令"></a>1.linux常用命令</h1><h3 id="1-1-系统命令"><a href="#1-1-系统命令" class="headerlink" title="1.1 系统命令"></a>1.1 系统命令</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">runlevel                     <span class="comment"># 查看当前的运行级别（5代表图形化界面）</span></span><br><span class="line">systemctl status sshd        <span class="comment"># 开启网络服务功能</span></span><br><span class="line">          stop               <span class="comment"># 关闭</span></span><br><span class="line">          restart            <span class="comment"># 重启</span></span><br><span class="line">          reload             <span class="comment"># 重载</span></span><br><span class="line"><span class="comment"># 常见服务</span></span><br><span class="line">sshd                         <span class="comment"># ssh服务（远程xshell连接服务器的）</span></span><br><span class="line">networking                   <span class="comment"># 网络</span></span><br><span class="line"></span><br><span class="line">reboot                       <span class="comment"># 重启</span></span><br><span class="line">halt                         <span class="comment"># 关机</span></span><br><span class="line">poweroff                     <span class="comment"># 关机</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-查看文件常用指令"><a href="#1-2-查看文件常用指令" class="headerlink" title="1.2 查看文件常用指令"></a>1.2 查看文件常用指令</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">touch file.txt        <span class="comment"># 创建文件</span></span><br><span class="line">vim file.txt          <span class="comment"># 写入文件</span></span><br><span class="line">cat                   <span class="comment"># 在命令提示符下查看文件内容</span></span><br><span class="line">more                  <span class="comment"># 在命令提示符中分页查看文件内容</span></span><br><span class="line">less                  <span class="comment"># 命令行中查看文件可以上下翻页反复浏览</span></span><br><span class="line">head                  <span class="comment"># 命令行中查看文件头几行</span></span><br><span class="line">tail                  <span class="comment"># 命令行中查看文件尾几行</span></span><br><span class="line">wc                    <span class="comment"># 统计文件的单词数 行数等信息</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-目录管理常用指令"><a href="#1-3-目录管理常用指令" class="headerlink" title="1.3 目录管理常用指令"></a>1.3 目录管理常用指令</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;1.文件目录常用命令&#x27;&#x27;&#x27;</span></span><br><span class="line">mkdir                 <span class="comment"># 创建新目录</span></span><br><span class="line">rmdir                 <span class="comment"># 删除空目录</span></span><br><span class="line">pwd                   <span class="comment"># 查看你当前所在的目录</span></span><br><span class="line">cd                    <span class="comment"># 切换目录</span></span><br><span class="line">ls                    <span class="comment"># 查看显示目录的内容</span></span><br><span class="line">rm                    <span class="comment"># 删除文件</span></span><br><span class="line">cp                    <span class="comment"># 复制文件或目录</span></span><br><span class="line">mv                    <span class="comment"># 移动文件或目录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">du                    <span class="comment"># 统计目录和文件空间的占用情况</span></span><br><span class="line">ln                    <span class="comment"># 创建硬链接</span></span><br><span class="line">ln -s                 <span class="comment"># 创建软链接</span></span><br><span class="line">which                 <span class="comment"># 查看linux命令所在的目录</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-账号与权限"><a href="#1-4-账号与权限" class="headerlink" title="1.4 账号与权限"></a>1.4 账号与权限</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;1.组管理&#x27;&#x27;&#x27;</span></span><br><span class="line">groupadd group_name                            <span class="comment"># 创建一个新用户组 </span></span><br><span class="line">groupdel group_name                            <span class="comment"># 删除一个用户组 </span></span><br><span class="line">groupmod -n new_group_name old_group_name      <span class="comment"># 重命名一个用户组</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;2.用户管理&#x27;&#x27;&#x27;</span></span><br><span class="line">useradd zhangsan                               <span class="comment"># 创建账户张三</span></span><br><span class="line">passwd zhangsan                                <span class="comment"># 给用户设置密码</span></span><br><span class="line">userdel -r zhangsan                            <span class="comment"># 删除张三及他的宿主目录</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;3.用户组管理&#x27;&#x27;&#x27;</span></span><br><span class="line">gpasswd -a zhangsan root                       <span class="comment"># 将张三用户加入root组</span></span><br><span class="line">groups zhangsan                                <span class="comment"># 确认zhangsan用户在root组</span></span><br><span class="line">gpasswd -d lisi root                           <span class="comment"># 将李zhangsan户从root组中删除</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;4.权限管理&#x27;&#x27;&#x27;</span></span><br><span class="line">chown -R zhangsan /aaa                         <span class="comment"># 将文件夹/aaa的多有者修改为zhangsan</span></span><br><span class="line">chown root:root /aaa                           <span class="comment"># 将/aaa文件夹的属主和属组都改成root</span></span><br><span class="line">chmod <span class="number">777</span> /aaa                 </span><br></pre></td></tr></table></figure>
+
+<h1 id="2-ubuntu开启sshd服务"><a href="#2-ubuntu开启sshd服务" class="headerlink" title="2.ubuntu开启sshd服务"></a>2.ubuntu开启sshd服务</h1><ul>
+<li>安装sshd</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">root@dev:shiyanlou_project<span class="comment"># sudo apt-get install openssh-server</span></span><br><span class="line">root@dev:shiyanlou_project<span class="comment"># /etc/init.d/ssh status</span></span><br><span class="line">root@dev:shiyanlou_project<span class="comment"># netstat -anptu | grep sshd</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>开启root远程登录功能</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">Port <span class="number">22</span>               <span class="comment"># 去掉注释</span></span><br><span class="line"><span class="comment">#PermitRootLogin prohibit-password</span></span><br><span class="line">PermitRootLogin yes   <span class="comment"># 把上面的换成yes</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启sshd服务</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">root@dev:shiyanlou_project<span class="comment">#  service sshd restart</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-ubuntu-安装软件"><a href="#3-ubuntu-安装软件" class="headerlink" title="3.ubuntu 安装软件"></a>3.ubuntu 安装软件</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 类似pip安装</span></span><br><span class="line">sudo apt-get install XXX</span><br><span class="line">sudo apt-get install -y XXX</span><br><span class="line">sudo apt-get remove XXX</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux操作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CentOS7常用命令</title>
+    <url>/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="CentOS常用命令"><a href="#CentOS常用命令" class="headerlink" title="CentOS常用命令"></a>CentOS常用命令</h1><hr>
+<p>[toc]</p>
+<h3 id="端口相关"><a href="#端口相关" class="headerlink" title="端口相关"></a>端口相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看监听(Listen)的端口</span></span><br><span class="line">netstat -lntp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看所有建立的TCP连接</span></span><br><span class="line">netstat -antp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">lsof -i tcp:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">netstat -lnp|grep <span class="number">8000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看正在全部进程</span></span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定的进程</span></span><br><span class="line">ps aux | grep 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死某个进程</span></span><br><span class="line">kill 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死一类进程</span></span><br><span class="line">killall 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 踢出某个终端  -9 可强制终止</span></span><br><span class="line">pkill -<span class="number">9</span> 程序名 </span><br></pre></td></tr></table></figure>
+
+<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">systemctl status xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">systemctl stop  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载服务</span></span><br><span class="line">systemctl reload xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务开机启动</span></span><br><span class="line">systemctl enable xxx   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设备服务禁止开机启动</span></span><br><span class="line">systemctl disable xxx  </span><br></pre></td></tr></table></figure>
+
+<h3 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#启动网络服务</span></span><br><span class="line">systemctl start network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#停止网络服务</span></span><br><span class="line">systemctl stop network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#重启网络服务</span></span><br><span class="line">systemctl restart network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看网络服务状态</span></span><br><span class="line">systemctl status network.serivce</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出虚拟环境列表</span></span><br><span class="line">lsvirtualenv</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新虚拟环境</span></span><br><span class="line">mkvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动/ 切换虚拟环境</span></span><br><span class="line">workon [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除虚拟环境</span></span><br><span class="line">rmvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#离开虚拟环境</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux操作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CentOS7软件安装</title>
+    <url>/tianzengde-io/2021/05/15/CentSO%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="CentSO软件安装"><a href="#CentSO软件安装" class="headerlink" title="CentSO软件安装"></a>CentSO软件安装</h1> <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在Linux上安装软件</span><br><span class="line">	<span class="number">1.</span>一种使用工具累进行 包安装</span><br><span class="line">    <span class="number">2.</span>通过下载源码进行编译安装</span><br></pre></td></tr></table></figure>
+
+<p>[toc]</p>
+<h2 id="1-安装命令"><a href="#1-安装命令" class="headerlink" title="1.安装命令"></a>1.安装命令</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">systemctl status redis  <span class="comment">#查询Redis的状态</span></span><br><span class="line"></span><br><span class="line">（Ubuntu）安装命令 sudo apt install</span><br><span class="line">（CentOS）安装命令 sudo yum install </span><br><span class="line">再次查询状态 查看是否成功</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-CentSO安装redis"><a href="#2-CentSO安装redis" class="headerlink" title="2.CentSO安装redis"></a>2.CentSO安装redis</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>添加redis库</span><br><span class="line">由于CentOS官方yum源里面没有Redis,这里我们需要安装一个第三方的yum源,这里用了Fedora的epel仓库:</span><br><span class="line"></span><br><span class="line">yum install epel-release</span><br><span class="line"><span class="number">2.</span>安装</span><br><span class="line">yum install redis</span><br><span class="line"><span class="number">3.</span>启动</span><br><span class="line">systemctl start redis</span><br><span class="line"><span class="number">4</span>、配置</span><br><span class="line">vim /etc/redis.conf</span><br><span class="line">注释掉 bind <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> 和 protected-mode no 否则远程连接可能会报错</span><br><span class="line"></span><br><span class="line">修改密码： </span><br><span class="line">找到 <span class="comment">#requirepass foobared 打开注释更改密码 </span></span><br><span class="line">如：requirepass <span class="number">123456</span></span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>重启redis</span><br><span class="line">systemctl restart redis</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>3.添加管理员权限</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>进入root系统</span><br><span class="line">su - root</span><br><span class="line"><span class="number">2.</span>给root用户添加可写权限</span><br><span class="line">chmod <span class="number">640</span> /etc/sudoers</span><br><span class="line"><span class="number">3.</span>修改sudoers文件</span><br><span class="line">vim /etc/sudoers</span><br><span class="line"><span class="number">4.</span>找到Allow root to run <span class="built_in">any</span> commands anywhere</span><br><span class="line">在 root   ALL=(ALL)      ALL 下面添加自己的用户名</span><br><span class="line">   tian   ALL=(ALL)      ALL</span><br><span class="line"><span class="number">5.</span>保存并退出</span><br><span class="line">按esc 退出 :wq 退出并保存 :wq!强制退出并保存</span><br><span class="line"><span class="number">6.</span>查看是否修改成功</span><br><span class="line">cat /etc/sudoers</span><br><span class="line"><span class="number">7.</span>退出root</span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-CentOS安装nginx"><a href="#3-CentOS安装nginx" class="headerlink" title="3.CentOS安装nginx"></a>3.CentOS安装nginx</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.安装源文件 yum install yum-utils</span></span><br><span class="line"><span class="comment"># 2.创建源文件 vi /etc/yum.repos.d/nginx.repo</span></span><br><span class="line"><span class="comment"># 3.写入源文件内容</span></span><br><span class="line">[nginx-stable]</span><br><span class="line">name=nginx stable repo</span><br><span class="line">baseurl=http://nginx.org/packages/centos/$releasever/$basearch/</span><br><span class="line">gpgcheck=<span class="number">1</span></span><br><span class="line">enabled=<span class="number">1</span></span><br><span class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</span><br><span class="line">module_hotfixes=true</span><br><span class="line"></span><br><span class="line">[nginx-mainline]</span><br><span class="line">name=nginx mainline repo</span><br><span class="line">baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/</span><br><span class="line">gpgcheck=<span class="number">1</span></span><br><span class="line">enabled=<span class="number">0</span></span><br><span class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</span><br><span class="line">module_hotfixes=true</span><br><span class="line"><span class="comment"># 4.安装 yum install nginx</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-安装uWSGI"><a href="#4-安装uWSGI" class="headerlink" title="4.安装uWSGI"></a>4.安装uWSGI</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>安装编译工具</span><br><span class="line">	<span class="comment"># yum install -y gcc* pcre-devel openssl-devel</span></span><br><span class="line"><span class="number">2.</span>安装python依赖</span><br><span class="line">	<span class="comment"># yum install -y python36-devel</span></span><br><span class="line"><span class="number">3.</span>安装uwsgi</span><br><span class="line">	<span class="comment"># pip3 install uwsgi</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-安装py虚拟环境"><a href="#5-安装py虚拟环境" class="headerlink" title="5.安装py虚拟环境"></a>5.安装py虚拟环境</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>创建虚拟环境命令：</span><br><span class="line">pip3 install virtualenv</span><br><span class="line">pip3 install virtualenvwrapper <span class="comment"># 扩展包</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>查找virtualenvwrapper所在的路径(记得加.sh要不然查到出来的路径不正确)</span><br><span class="line">whereis virtualenvwrapper.sh或 find / -name virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>创建一个管理所有virtualenvwrapper的存放文件夹，一般建议在home目录下</span><br><span class="line">例：mkdir /home/rock/.virtualenvs</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>查找 .bashrc 配置文件所在路径</span><br><span class="line">一般在/root/.bashrc</span><br><span class="line"></span><br><span class="line">添加以下两句：</span><br><span class="line">export WORKON_HOME=路径/.virtualenvs</span><br><span class="line">source virtualenvwrapper.sh的存放路径</span><br><span class="line">保存退出，并执行</span><br><span class="line">source 路径/.bashrc(激活更新配置)</span><br><span class="line"></span><br><span class="line">例：</span><br><span class="line">export WORKON_HOME=/home/rock/.virtualenvs</span><br><span class="line">source /usr/local/<span class="built_in">bin</span>/virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line">配置好后要执行以下命令才生效：</span><br><span class="line">source .bashrc</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>常用命令</span><br><span class="line">lsvirtualenv    	 <span class="comment">#列出虚拟环境列表</span></span><br><span class="line">mkvirtualenv [name]  <span class="comment">#创建新虚拟环境</span></span><br><span class="line">workon [name]    	 <span class="comment">#启动/ 切换虚拟环境</span></span><br><span class="line">rmvirtualenv [name]  <span class="comment">#删除虚拟环境</span></span><br><span class="line">deactivate   		 <span class="comment">#离开虚拟环境</span></span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>快速激活虚拟环境</span><br><span class="line">workon 虚拟环境名称</span><br><span class="line">例：workon python001</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-安装Git"><a href="#6-安装Git" class="headerlink" title="6.安装Git"></a>6.安装Git</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">yum install git -y</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux操作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/tianzengde-io/2021/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS7软件安装-详细版</title>
+    <url>/tianzengde-io/2021/05/15/%E8%99%9A%E6%8B%9F%E6%9C%BA_CentOS--%E7%B2%BE%E5%93%81/</url>
+    <content><![CDATA[<p>[toc]</p>
+<h3 id="CentOS准备"><a href="#CentOS准备" class="headerlink" title="CentOS准备"></a>CentOS准备</h3><h5 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h5><h5 id="2、yum源"><a href="#2、yum源" class="headerlink" title="2、yum源"></a>2、yum源</h5><p>CentOS7 已经安装好了yum工具，使用的官方镜像源</p>
+<p>也可以安装阿里源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://developer.aliyun.com/mirror/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看yum的镜像源</p>
+<p>cd  /etc/yum.repos.d/  进入这个目录 查看所有的repo文件</p>
+<p>配置 清华大学镜像仓库（推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://mirrors.cnnic.cn/</span><br><span class="line"></span><br><span class="line">https://mirrors.cnnic.cn/help/centos/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>配置过程：</p>
+<p>第一、先备份一下yum的默认Base镜像源</p>
+<p>建议先备份 CentOS-Base.repo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br></pre></td></tr></table></figure>
+
+
+
+<p>第二、编辑 /etc/yum.repos.d/CentOS-Base.repo 文件</p>
+<p>在 <code>mirrorlist=</code> 开头行前面加 <code>#</code> 注释掉；并将 <code>baseurl=</code> 开头行取消注释（如果被注释的话），把该行内的域名（例如<code>mirror.centos.org</code>）替换为 <code>mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[base]</span><br><span class="line">name=CentOS-$releasever - Base</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra</span><br><span class="line">baseurl=http://mirror.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>第三步、退出文件保存</p>
+<p>第四步、更新软件包缓存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用yum安装</p>
+<p>yum install 包名</p>
+<p>这样子安装 会有提示 问要不要安装</p>
+<p>如果不想显示这个提示，直接安装 可以使用参数 -y</p>
+<p>查看已经安装的软件包</p>
+<p>yum list installed telnet</p>
+<h5 id="3、安装其他的源"><a href="#3、安装其他的源" class="headerlink" title="3、安装其他的源"></a>3、安装其他的源</h5><p>我们用yum安装软件时,经常发现我们的yum源里面没有该软件，需要自己去wget，然后configure,make,make install，太折腾了。</p>
+<p>其实，CentOS还有一个源叫做 EPEL (Extra Packages for Enterprise)，里面有1万多个软件，比163的源还强，强烈建议安装。</p>
+<p>查看目前所有的源</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 执行命令</span></span><br><span class="line">yum repolist</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询结果</span></span><br><span class="line">[root@bogon yum.repos.d]# yum repolist</span><br><span class="line">Loaded plugins: fastestmirror</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * extras: mirror.bit.edu.cn</span><br><span class="line"> * updates: mirror.bit.edu.cn</span><br><span class="line">repo id                             repo name                             status</span><br><span class="line">base/7/x86_64                       CentOS-7 - Base                       10,070</span><br><span class="line">extras/7/x86_64                     CentOS-7 - Extras                        412</span><br><span class="line">updates/7/x86_64                    CentOS-7 - Updates                       945</span><br><span class="line">repolist: 11,427</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当前一共有11427个软件</p>
+<p>安装epel源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y install epel-release</span><br></pre></td></tr></table></figure>
+
+<p>修改镜像源</p>
+<p>修改<code>/etc/yum.repos.d/epel.repo</code>，将<code>mirrorlist</code>和<code>metalink</code>开头的行注释掉。</p>
+<p>接下来，取消注释这个文件里<code>baseurl</code>开头的行，并将其中的<code>http://download.fedoraproject.org/pub</code>替换成<code>https://mirrors.tuna.tsinghua.edu.cn</code>。</p>
+<p>安装IUS软件源</p>
+<p>官方 网站 <a href="https://ius.io/setup">https://ius.io/setup</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install \</span><br><span class="line">https://repo.ius.io/ius-release-el7.rpm \</span><br><span class="line">https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><h5 id="1、查看虚拟机的IP"><a href="#1、查看虚拟机的IP" class="headerlink" title="1、查看虚拟机的IP"></a>1、查看虚拟机的IP</h5><p>CentOS7没有ifconfig命令，查看ip可以通过</p>
+<p>ip addr命令</p>
+<p>找到了 网卡ens33</p>
+<p>默认 ens33网卡没有IP地址</p>
+<p>接着来查看ens33网卡的配置：</p>
+<p>/etc/sysconfig 存放的都是系统配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33  </span><br></pre></td></tr></table></figure>
+
+<p>然后 修改 ONBOOT=no   改为 yes</p>
+<p>以后每次启动操作系统 会自动启动 网卡会有IP</p>
+<p>接下来重启网卡服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D</span><br><span class="line"></span><br><span class="line">#如果在CentOS6 使用这个命令</span><br><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+
+
+
+<p>有的分支版本中，可能没有service命令操作服务，但是有一个共性的目录 /ect/init.d 这个目录中放着很多服务的快捷方式</p>
+<p>此处重启网卡命令还可以使用如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在查看 ip add</p>
+<p>找到IP地址</p>
+<p>cd /etc/sysconfig/network-scripts/  这个目录下看的了 网卡文件信息</p>
+<p>测试：</p>
+<p>linux 中 ping 外网  例如 ping  <a href="http://www.baidu.com/">www.baidu.com</a></p>
+<p>给CentOS7安装 ifconfig命令</p>
+<p>首先使用 yum工具搜索 </p>
+<p>yum search ifconfig</p>
+<p>会搜索到</p>
+<p>net-tools.x86_64 : Basic networking tools</p>
+<p>在第一次安装的时候，有问题，在window的cmd下ping不通虚拟机的IP。后来重新安装了一次VM软件、重新创建虚拟机 才好使了。</p>
+<p>这里需要说明一下：之前修改网卡文件，把ONBOOT=no不是必须要这样子做的，在开始安装CentOS7的时候，有一个设置界面，设置 分区，还可以设置网络network，在这里打开网络，出现分配的IP，就可以实现自动设置了。在设置 打开 网络的时候 可能没有IP出现 这个时候 要 去VM-编辑-虚拟网络设置 中 找到NAT连接网卡 一般是VM 8网卡，重新设置一下 IP就会激活出来。</p>
+<h5 id="2、ssh"><a href="#2、ssh" class="headerlink" title="2、ssh"></a>2、ssh</h5><p>ssh协议  ： 实现远程连接、远程文件上传</p>
+<p>协议使用端口号：默认是22</p>
+<p>ssh配置可以被修改，/etc/ssh/ssh_config</p>
+<p>服务器启动/停止/重启</p>
+<p>service  sshd start/stop/restart</p>
+<p>ssh是服务必须开启的服务，不然就连接不上了。</p>
+<p>CentOS7的 Min版本 默认页安装了ssh协议 并且启动了sshd服务</p>
+<p>可以通过  ps -ef |grep ssh 查看</p>
+<p>这个时候 就可以 使用 终端来连接Linux服务器了</p>
+<p>这里使用Putty来连接。在Host Name里输入IP  在Port输入22</p>
+<p>点击Open，这时候会报一共错误</p>
+<p><img src="../images/1-6.png" alt="1-6"></p>
+<p>这是因为  ssh是需要 公钥私钥 才能建立连接，这个是服务器把公钥发给我们，要不要缓存起来。</p>
+<p>我们要点是 才行。 然后 输入 用户名  密码  等几秒钟连接 就可以</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">login as: root</span><br><span class="line">root@192.168.87.128&#x27;s password:</span><br><span class="line">Last login: Sat Aug  1 06:44:17 2020</span><br><span class="line"></span><br><span class="line">dd[root@bogon ~]#</span><br><span class="line">[root@bogon ~]# dir</span><br><span class="line">anaconda-ks.cfg</span><br><span class="line">[root@bogon ~]#</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、使用xshell登录"><a href="#3、使用xshell登录" class="headerlink" title="3、使用xshell登录"></a>3、使用xshell登录</h5><p>在CentOS7_Min版本中  已经安装好了sshd服务，且在sshd_config文件中，已经配置了 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line">PermitEmptyPasswords no</span><br></pre></td></tr></table></figure>
+
+<p>我们这里只需要修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PermitRootLogin no     不阻止root登录</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4、安装vim"><a href="#4、安装vim" class="headerlink" title="4、安装vim"></a>4、安装vim</h5><p>vim命令在最小安装时centos7系统没有自带，安装vim命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y vim</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="5、安装tree树形"><a href="#5、安装tree树形" class="headerlink" title="5、安装tree树形"></a>5、安装tree树形</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y install tree</span><br></pre></td></tr></table></figure>
+
+<p>然后执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三、安装python环境"><a href="#三、安装python环境" class="headerlink" title="三、安装python环境"></a>三、安装python环境</h3><h5 id="1、安装python"><a href="#1、安装python" class="headerlink" title="1、安装python"></a>1、安装python</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装Python3.6</span></span><br><span class="line">yum -y install python36u</span><br><span class="line">yum -y install python36u-devel</span><br></pre></td></tr></table></figure>
+
+<p>创建python3连接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ln -s /bin/python3.6  /bin/python3</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、安装pip3"><a href="#2、安装pip3" class="headerlink" title="2、安装pip3"></a>2、安装pip3</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install python36u-pip -y</span><br></pre></td></tr></table></figure>
+
+<p>创建pip3连接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ln -s /bin/pip3.6  /bin/pip3</span><br></pre></td></tr></table></figure>
+
+
+
+<p>给pip配置国内镜像：</p>
+<p>首先：先升级pip版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U</span><br></pre></td></tr></table></figure>
+
+<p>然后进行配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意：</p>
+<p>在安装成功python、pip以后 有时候会自动创建连接符，不需要在创建。</p>
+<h5 id="3、安装mysqlclient"><a href="#3、安装mysqlclient" class="headerlink" title="3、安装mysqlclient"></a>3、安装mysqlclient</h5><p>安装之前 必须 先执行下面的安装，否则会报错</p>
+<p><img src="../images/1-8.png" alt="1-8"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y install mysql-devel gcc gcc-devel python-devel</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h3><h5 id="1、安装mysql"><a href="#1、安装mysql" class="headerlink" title="1、安装mysql"></a>1、安装mysql</h5><p>去官网上查看  <a href="https://dev.mysql.com/downloads/repo/yum/">https://dev.mysql.com/downloads/repo/yum/</a>       mysql的yum仓库</p>
+<p>这里安装mysql 的源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>检查MySQL源是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum repolist enabled</span><br><span class="line"></span><br><span class="line">部分结果：</span><br><span class="line">mysql-connectors-community/x86_64                   MySQL Connectors Community           </span><br><span class="line">mysql-tools-community/x86_64                        MySQL Tools Community                 </span><br><span class="line">mysql80-community/x86_64                            MySQL 8.0 Community Server     </span><br></pre></td></tr></table></figure>
+
+
+
+<p>源安装好以后，安装mysql服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install mysql-community-server</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Transaction test succeeded</span><br><span class="line">Running transaction</span><br><span class="line">  Installing : mysql-community-common-8.0.21-1.el7.x86_64                                                               1/7</span><br><span class="line">  Installing : mysql-community-libs-8.0.21-1.el7.x86_64                                                                 2/7</span><br><span class="line">  Installing : mysql-community-client-8.0.21-1.el7.x86_64                                                               3/7</span><br><span class="line">  Installing : net-tools-2.0-0.25.20131004git.el7.x86_64                                                                4/7</span><br><span class="line">  Installing : mysql-community-server-8.0.21-1.el7.x86_64                                                               5/7</span><br><span class="line">  Installing : mysql-community-libs-compat-8.0.21-1.el7.x86_64                                                          6/7</span><br><span class="line">  Erasing    : 1:mariadb-libs-5.5.65-1.el7.x86_64                                                                       7/7</span><br><span class="line">  Verifying  : mysql-community-server-8.0.21-1.el7.x86_64                                                               1/7</span><br><span class="line">  Verifying  : mysql-community-libs-8.0.21-1.el7.x86_64                                                                 2/7</span><br><span class="line">  Verifying  : mysql-community-client-8.0.21-1.el7.x86_64                                                               3/7</span><br><span class="line">  Verifying  : mysql-community-libs-compat-8.0.21-1.el7.x86_64                                                          4/7</span><br><span class="line">  Verifying  : net-tools-2.0-0.25.20131004git.el7.x86_64                                                                5/7</span><br><span class="line">  Verifying  : mysql-community-common-8.0.21-1.el7.x86_64                                                               6/7</span><br><span class="line">  Verifying  : 1:mariadb-libs-5.5.65-1.el7.x86_64                                                                       7/7</span><br><span class="line"></span><br><span class="line">Installed:</span><br><span class="line">  mysql-community-libs.x86_64 0:8.0.21-1.el7                 mysql-community-libs-compat.x86_64 0:8.0.21-1.el7</span><br><span class="line">  mysql-community-server.x86_64 0:8.0.21-1.el7</span><br><span class="line"></span><br><span class="line">Dependency Installed:</span><br><span class="line">  mysql-community-client.x86_64 0:8.0.21-1.el7                 mysql-community-common.x86_64 0:8.0.21-1.el7</span><br><span class="line">  net-tools.x86_64 0:2.0-0.25.20131004git.el7</span><br><span class="line"></span><br><span class="line">Replaced:</span><br><span class="line">  mariadb-libs.x86_64 1:5.5.65-1.el7</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>需要安装 Total download size: 553 M </p>
+<p>MySQL服务操作</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 启动服务</span><br><span class="line">systemctl start mysqld</span><br><span class="line"></span><br><span class="line"># 查看服务</span><br><span class="line">systemctl status mysqld</span><br><span class="line"></span><br><span class="line">mysqld.service - MySQL Server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since Sat 2020-08-01 16:06:52 EDT; 12s ago</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改 MySQL 中 root 本地登录密码</p>
+<p>先在日志中查找 生成的密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line">[root@bogon ~]# grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line">2020-08-01T20:06:49.105603Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: J&lt;wGLsguq9?n</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用密码root登录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>不过进行其他操作的时候，会发现 提示你用alert 语句去修改密码，这个密码只是临时密码。</p>
+<p>mysql&gt; use mysql<br>ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.</p>
+<p>修改root用户密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;JiYun_123456&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>密码组成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql&gt; show global variables like &#x27;%validate_password%&#x27;;</span><br><span class="line">+--------------------------------------+--------+</span><br><span class="line">| Variable_name                        | Value  |</span><br><span class="line">+--------------------------------------+--------+</span><br><span class="line">| validate_password.check_user_name    | ON     |</span><br><span class="line">| validate_password.dictionary_file    |        |</span><br><span class="line">| validate_password.length             | 8      |</span><br><span class="line">| validate_password.mixed_case_count   | 1      |</span><br><span class="line">| validate_password.number_count       | 1      |</span><br><span class="line">| validate_password.policy             | MEDIUM |</span><br><span class="line">| validate_password.special_char_count | 1      |</span><br><span class="line">+--------------------------------------+--------+</span><br><span class="line"></span><br><span class="line"># 解释</span><br><span class="line">validate_password_dictionary_file ：验证密码的字典文件,与之相同的不可使用</span><br><span class="line"></span><br><span class="line">validate_password_length ：密码最少长度</span><br><span class="line"></span><br><span class="line">validate_password_number_count ：最少数字字符数</span><br><span class="line"></span><br><span class="line">validate_password_mixed_case_count ：最少大写和小写字符数(同时有大写和小写)</span><br><span class="line"></span><br><span class="line">validate_password_special_char_count ：最少特殊字符数</span><br><span class="line"></span><br><span class="line">validate_password_policy ：密码安全策略</span><br><span class="line">    LOW: 只限制长度</span><br><span class="line">    MEDIUM： 限制长度、数字、字母、特殊字符</span><br><span class="line">    STRONG： 限制长度、数字、字母、特殊字符、字典</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#默认是中等，密码必须由   大写字母、小写字母、数字、特殊字符组成   且长度为8位</span><br></pre></td></tr></table></figure>
+
+
+
+<p>退出mysql</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Ctrl+Z</span><br></pre></td></tr></table></figure>
+
+
+
+<p>修改密码策略</p>
+<p>在/etc/my.cnf文件添加validate_password_policy配置，指定密码策略<br>选择0（LOW），1（MEDIUM），2（STRONG）其中一种，选择2需要提供密码字典文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">validate_password_policy=0</span><br></pre></td></tr></table></figure>
+
+<p>如果不需要密码策略，添加my.cnf文件中添加如下配置禁用即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">validate_password = off</span><br></pre></td></tr></table></figure>
+
+
+
+<p>重新启动mysql服务使配置生效：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
+
+
+
+<p>允许远程登录</p>
+<p>MySQL默认只允许root帐户在本地登录，想要远程连接MySQL，必须开启root用户允许远程连接，或者添加一个允许远程连接的帐户。</p>
+<p>首先查看mysql的 user表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from user \G</span><br><span class="line"></span><br><span class="line">*************************** 4. row ***************************</span><br><span class="line">                    Host: localhost</span><br><span class="line">                    User: root</span><br><span class="line">             Select_priv: Y</span><br><span class="line">             Insert_priv: Y</span><br><span class="line">             Update_priv: Y</span><br><span class="line">             Delete_priv: Y</span><br><span class="line">             Create_priv: Y</span><br><span class="line">               Drop_priv: Y</span><br><span class="line">             Reload_priv: Y</span><br><span class="line">           Shutdown_priv: Y</span><br><span class="line">            Process_priv: Y</span><br><span class="line">               File_priv: Y</span><br><span class="line">              Grant_priv: Y</span><br><span class="line">         References_priv: Y</span><br><span class="line">              Index_priv: Y</span><br><span class="line">              Alter_priv: Y</span><br><span class="line">            Show_db_priv: Y</span><br><span class="line">              Super_priv: Y</span><br><span class="line">   Create_tmp_table_priv: Y</span><br><span class="line">        Lock_tables_priv: Y</span><br><span class="line">            Execute_priv: Y</span><br><span class="line">         Repl_slave_priv: Y</span><br><span class="line">        Repl_client_priv: Y</span><br><span class="line">        Create_view_priv: Y</span><br><span class="line">          Show_view_priv: Y</span><br><span class="line">     Create_routine_priv: Y</span><br><span class="line">      Alter_routine_priv: Y</span><br><span class="line">        Create_user_priv: Y</span><br><span class="line">              Event_priv: Y</span><br><span class="line">            Trigger_priv: Y</span><br><span class="line">  Create_tablespace_priv: Y</span><br><span class="line">                ssl_type:</span><br><span class="line">              ssl_cipher: 0x</span><br><span class="line">             x509_issuer: 0x</span><br><span class="line">            x509_subject: 0x</span><br><span class="line">           max_questions: 0</span><br><span class="line">             max_updates: 0</span><br><span class="line">         max_connections: 0</span><br><span class="line">    max_user_connections: 0</span><br><span class="line">                  plugin: caching_sha2_password</span><br><span class="line">   authentication_string: $A$005$QVf`</span><br><span class="line">hi@? _:w.FDDatpHPPpgl.7j830gDg9X.HbKF05PzcdmXptHuD</span><br><span class="line">        password_expired: N</span><br><span class="line">   password_last_changed: 2020-08-03 20:01:07</span><br><span class="line">       password_lifetime: NULL</span><br><span class="line">          account_locked: N</span><br><span class="line">        Create_role_priv: Y</span><br><span class="line">          Drop_role_priv: Y</span><br><span class="line">  Password_reuse_history: NULL</span><br><span class="line">     Password_reuse_time: NULL</span><br><span class="line">Password_require_current: NULL</span><br><span class="line">         User_attributes: NULL</span><br><span class="line">4 rows in set (0.01 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看到 root用户默认只能访问localhost   也就是只能本地登录，不能远程登录。</p>
+<p>查询mysql具体版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT @@VERSION</span><br><span class="line"></span><br><span class="line">mysql&gt; select @@VERSION;</span><br><span class="line">+-----------+</span><br><span class="line">| @@VERSION |</span><br><span class="line">+-----------+</span><br><span class="line">| 8.0.21    |</span><br><span class="line">+-----------+</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>此版的的mysql版本把将创建账户和赋予权限分开了</p>
+<p>早期可以合二为一 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;JiYun_123456&#x27; WITH GRANT OPTION;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>创建可以远程访问的root用户</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create user &#x27;root&#x27;@&#x27;%&#x27; identified by  &#x27;JiYun_123&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>给远程root用户赋予权限</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; with grant option;</span><br></pre></td></tr></table></figure>
+
+<p>操作后要执行刷新，远程用户才能有效</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+
+
+<p> 查看数据库使用的字符集</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show variables like &#x27;%character%%&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">+--------------------------+--------------------------------+</span><br><span class="line">| Variable_name            | Value                          |</span><br><span class="line">+--------------------------+--------------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                        |</span><br><span class="line">| character_set_connection | utf8mb4                        |</span><br><span class="line">| character_set_database   | utf8mb4                        |</span><br><span class="line">| character_set_filesystem | binary                         |</span><br><span class="line">| character_set_results    | utf8mb4                        |</span><br><span class="line">| character_set_server     | utf8mb4                        |</span><br><span class="line">| character_set_system     | utf8                           |</span><br><span class="line">| character_sets_dir       | /usr/share/mysql-8.0/charsets/ |</span><br><span class="line">+--------------------------+--------------------------------+</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>MySQL忘记root用户密码，解决方案<br>在 /etc/my.cnf文件[mysqld]下面加如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">skip-grant-tables  #设置为跳过授权认证 不验证密码</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql  -u root</span><br><span class="line"></span><br><span class="line">update mysql.user set authentication_string=password(&#x27;newPass&#x27;) where user=&#x27;root&#x27; and Host = &#x27;localhost&#x27;;</span><br><span class="line"></span><br><span class="line">flush privileges</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2、安装redis"><a href="#2、安装redis" class="headerlink" title="2、安装redis"></a>2、安装redis</h5><p>yum安装 ，不是最新的，可以去下载源 下载最新的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install redis</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动redis服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start redis</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@bogon etc]# ps -ef | grep redis</span><br><span class="line">root       8460   8342  0 23:21 pts/0    00:00:00 grep --color=auto redis</span><br><span class="line">[root@bogon etc]# systemctl start redis</span><br><span class="line">[root@bogon etc]# ps -ef | grep redis</span><br><span class="line">redis      8467      1  0 23:22 ?        00:00:00 /usr/bin/redis-server 127.0.0.1:6379</span><br><span class="line">root       8471   8342  0 23:22 pts/0    00:00:00 grep --color=auto redis</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查看版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@bogon etc]# redis-cli --version</span><br><span class="line">redis-cli 3.2.12</span><br></pre></td></tr></table></figure>
+
+<p>设置为开机自动启动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl enable redis.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@bogon etc]# systemctl enable redis.service</span><br><span class="line">Created symlink from /etc/systemd/system/multi-user.target.wants/redis.service to /usr/lib/systemd/system/redis.service.</span><br></pre></td></tr></table></figure>
+
+
+
+<p>redis默认只能访问localhost，开启远程访问</p>
+<p>在redis配置文件  /etc/redis.conf 中配置:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind 127.0.0.1  192.168.87.129</span><br></pre></td></tr></table></figure>
+
+<p>重启redis服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart redis</span><br></pre></td></tr></table></figure>
+
+
+
+<p>代进一步认证：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis 3.2后新增protected-mode配置，默认是yes，即开启。解决方法分为两种：</span><br><span class="line"></span><br><span class="line">1、设置 protected-mode 为 no </span><br><span class="line"></span><br><span class="line">2、配置bind或者设置密码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在redis的配置文件/etc/redis.conf中：</span><br><span class="line"></span><br><span class="line">1.bind 127.0.0.1改为 #bind 127.0.0.1</span><br><span class="line"></span><br><span class="line">2.protected-mode yes 改为 protected-mode no</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>防火墙操作</p>
+<p>在防火墙上给 6379端口  放行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开端口命令：</span></span><br><span class="line">firewall-cmd --zone=public --add-port=6379/tcp --permanent</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启防火墙：</span></span><br><span class="line">systemctl restart firewalld.service </span><br></pre></td></tr></table></figure>
+
+<p>命令含义：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--zone #作用域 </span><br><span class="line">--add-port=80/tcp  #添加端口，格式为：端口/通讯协议 </span><br><span class="line">--permanent   #永久生效，没有此参数重启后失效 </span><br></pre></td></tr></table></figure>
+
+<p>其他防火墙命令:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置开机自启</span></span><br><span class="line">systemctl enable firewalld.service</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta"> #</span><span class="bash">检查防火墙状态是否打开</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看开启的所有的端口的方法：</span></span><br><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+
+
+
+<p>远程登录redis</p>
+<p>在cmd命令行上输入命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\fan&gt;redis-cli -h 192.168.87.129 -p 6379</span><br><span class="line">192.168.87.129:6379&gt;</span><br><span class="line">进入到了redis中</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><h5 id="1、安装源"><a href="#1、安装源" class="headerlink" title="1、安装源"></a>1、安装源</h5><p>官方提供的 源的配置    <a href="http://nginx.org/en/linux_packages.html#RHEL-CentOS">http://nginx.org/en/linux_packages.html#RHEL-CentOS</a></p>
+<p>步骤1: 安装先决条件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum  install yum-utils</span><br></pre></td></tr></table></figure>
+
+<p>步骤2：创建源文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/nginx.repo</span><br></pre></td></tr></table></figure>
+
+<p>步骤3：写入源文件内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[nginx-stable]</span><br><span class="line">name=nginx stable repo</span><br><span class="line">baseurl=http://nginx.org/packages/centos/$releasever/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</span><br><span class="line">module_hotfixes=true</span><br><span class="line"></span><br><span class="line">[nginx-mainline]</span><br><span class="line">name=nginx mainline repo</span><br><span class="line">baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=https://nginx.org/keys/nginx_signing.key</span><br><span class="line">module_hotfixes=true</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h5><p>步骤4：安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
+
+<p>步骤5： 启动 nginx服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl start nginx</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看状态</span></span><br><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure>
+
+<p>步骤6：临时关闭防火墙 或者把80端口 添加到防火墙</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 临时关闭防火墙</span></span><br><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、测试"><a href="#3、测试" class="headerlink" title="3、测试"></a>3、测试</h5><p>通过本地浏览器访问 虚拟机IP地址 会发现 Nginx</p>
+<p><img src="../images/1-7.png" alt="1-7"></p>
+<p>如果不关闭，默认80端口是不放开的，window主机浏览器 是无法访问到虚拟机上的nginx服务的。</p>
+<h5 id="4、其他问题"><a href="#4、其他问题" class="headerlink" title="4、其他问题"></a>4、其他问题</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 永久关闭防火墙命令</span></span><br><span class="line">systemctl disable firewalld</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭selinux</span></span><br><span class="line">vim /etc/selinux/config</span><br><span class="line"></span><br><span class="line">修改</span><br><span class="line">SELINUX=enforcing</span><br><span class="line">为</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="安装uwsgi"><a href="#安装uwsgi" class="headerlink" title="安装uwsgi"></a>安装uwsgi</h3><p>uWSGI是一个Web应用服务器，它实现了WSGI协议、uwsgi、http等协议</p>
+<p>要注意 WSGI / uwsgi / uWSGI 这三个概念的区分。</p>
+<ul>
+<li>WSGI是一种通信协议。</li>
+<li>uwsgi是一种线路协议而不是通信协议，在此常用于在uWSGI服务器与其他网络服务器的数据通信。</li>
+<li>而uWSGI是实现了uwsgi和WSGI两种协议的Web应用服务器。</li>
+</ul>
+<p>我们这里要安装的就是 uWSGI服务器 </p>
+<p>注意：一定要先安装  python-devel  经过测试 否则 安装uwsgi会报错</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装编译工具</span></span><br><span class="line">yum install -y gcc* pcre-devel openssl-devel</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装开发包</span></span><br><span class="line">yum install -y python36-devel </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 uwsgi 就是服务器</span></span><br><span class="line">pip3 install uwsgi</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Docker操作"><a href="#Docker操作" class="headerlink" title="Docker操作"></a>Docker操作</h3><h5 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h5><p>docker官方网站 介绍如何在 CentOS上安装</p>
+<p><a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
+<p>步骤1：前提条件</p>
+<p>前提条件：要安装Docker Engine，需要一个CentOS7的版本。</p>
+<p>该centos-extras库必须启用。默认情况下，此存储库是启用的</p>
+<p>步骤2：卸载旧版本</p>
+<p>旧的Docker版本称为<code>docker</code>或<code>docker-engine</code>。如果已安装这些程序，请卸载它们以及相关的依赖项。Docker Engine软件包现在称为<code>docker-ce</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、开始安装"><a href="#2、开始安装" class="headerlink" title="2、开始安装"></a>2、开始安装</h5><p>首先 添加docker源 到yum源中</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装yum 的工具包</span></span><br><span class="line">yum install -y yum-uitls</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加docker的源到yum</span></span><br><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<p>安装Docker Engine</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装最新版本的docker引擎 docker客户端 docker容器</span></span><br><span class="line">yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p>启动Docker服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl start docker</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把docker设置为 开机自启动</span></span><br><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过运行hello-world 映像来验证是否正确安装了Docker Engine</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run hello-world</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示结果</span></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly</span><br></pre></td></tr></table></figure>
+
+<p>这个命令会去 下载 hello-world 镜像 并在容器中运行。</p>
+<p>升级Docker Engine</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y upgrade</span><br></pre></td></tr></table></figure>
+
+
+
+<p>卸载docker引擎</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum remove docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p> 镜像、容器、数据卷或自定义的配置文件不会自动删除，需要手动删除</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3、配置阿里镜像加速器"><a href="#3、配置阿里镜像加速器" class="headerlink" title="3、配置阿里镜像加速器"></a>3、配置阿里镜像加速器</h5><p>之所以要配置镜像加速，是因为默认访问官方的镜像太慢，导致TimeOut</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Error response from daemon: Get https://registry-1.docker.io/v2/: net/http: TLS handshaketimeout</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过配置文件/etc/docker/daemon.json来使用加速器</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi daemon.json </span><br><span class="line"></span><br><span class="line">添加内容:</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;阿里提供的加速器地址&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行重启</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="运用Docker部署-基础篇"><a href="#运用Docker部署-基础篇" class="headerlink" title="运用Docker部署-基础篇"></a>运用Docker部署-基础篇</h3><h5 id="1、给docker配置国内源"><a href="#1、给docker配置国内源" class="headerlink" title="1、给docker配置国内源"></a>1、给docker配置国内源</h5><p>这里介绍使用阿里的镜像源</p>
+<p><a href="https://cr.console.aliyun.com/cn-beijing/instances/mirrors?accounttraceid=ab47ebdebb2c414d92c70f282e46c876uuzd">https://cr.console.aliyun.com/cn-beijing/instances/mirrors?accounttraceid=ab47ebdebb2c414d92c70f282e46c876uuzd</a></p>
+<p>具体可以参考阿里文档。</p>
+<h5 id="2、docker运行mysql的数据库"><a href="#2、docker运行mysql的数据库" class="headerlink" title="2、docker运行mysql的数据库"></a>2、docker运行mysql的数据库</h5><p>因为在一台电脑上进行部署，因此需要一个桥接网络</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker network create hello_network</span><br></pre></td></tr></table></figure>
+
+
+
+<p>首先 下载mysql</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<p>注意用 5. 7 5.8 还需要进入到mysql容器里 进行密码修改</p>
+<p>初始化root密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --network hello_network --name fmysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<p>并且进入到docker容器里，可以操作容器</p>
+<p>也可以单独进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it fmysql /bin/bash</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@bfb96fd28ed3:/# mysql -u root -p</span><br><span class="line">Enter password:</span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 9</span><br><span class="line">Server version: 8.0.21 MySQL Community Server - GPL</span><br><span class="line"></span><br><span class="line">........................</span><br><span class="line"></span><br><span class="line">Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>创建 应用需要的数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create database hello_pro</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3、项目拷贝到CentOS服务器"><a href="#3、项目拷贝到CentOS服务器" class="headerlink" title="3、项目拷贝到CentOS服务器"></a>3、项目拷贝到CentOS服务器</h5><p>这里使用scp 命令，scp是linux系统基于ssh登录进行安全的远程文件拷贝命令。</p>
+<p>基本格式:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">scp [可选参数] 拷贝的文件  目标目录</span><br></pre></td></tr></table></figure>
+
+
+
+<p>也可以使用可视化工具 FileZilla 通过ssh连接 来实现登录</p>
+<p>windows平台上的django项目就上传到了CentOS7的服务器上</p>
+<p>这个时候 CentOS7上没有安装python环境，因此不能运行。</p>
+<p>如果要运行可以安装python环境，然后pip安装各种需要的包</p>
+<h5 id="4、把应用构建成镜像"><a href="#4、把应用构建成镜像" class="headerlink" title="4、把应用构建成镜像"></a>4、把应用构建成镜像</h5><p>1、首先需要保证应用的环境是一致的，这里使用python:3.6镜像开始构建</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull python:3.6</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>2、准备好应用需要安装哪些包，在window上通过运行 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>名字不是必须叫requirements.txt  约定成俗 这么叫</p>
+<p>或者也可以直接安装</p>
+<h5 id="5、编写Dockerfile文件"><a href="#5、编写Dockerfile文件" class="headerlink" title="5、编写Dockerfile文件"></a>5、编写Dockerfile文件</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM python:3.6</span><br><span class="line">WORKDIR /home/work</span><br><span class="line">RUN pip install django==2.0.4 mysqlclient djangorestframework</span><br><span class="line">COPY . .</span><br><span class="line">EXPOSE 8000</span><br><span class="line">CMD [&quot;python&quot;,&quot;manage.py&quot;,&quot;runserver&quot;]</span><br></pre></td></tr></table></figure>
+
+<h5 id="-1"><a href="#-1" class="headerlink" title=""></a></h5><p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name hello --network hello_network  -p 8080:8000  hello</span><br></pre></td></tr></table></figure>
+
+<p>运行如果不成功，则进入 容器 启动一下 python manage.py runserver</p>
+<p>看看是不是成功了。</p>
+<p>发现运行不成功，进入到了  应用容器里 执行 python manage.py runserver 报错：</p>
+<p>(2002, “Can’t connect to local MySQL server through socket ‘/var/run/mysqld/mysqld.sock’ (2)”)</p>
+<p>连接不到数据库</p>
+<p>这是因为不在一个网络中，设置了 –network 就不会有这个错误了</p>
+<p>6、容器连接</p>
+<p>Plugin caching_sha2_password could not be loaded: /usr/lib/x86_64-linux-gnu/mariadb19/plugin/caching_sha2_password.so:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#修改加密规则</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27; PASSWORD EXPIRE NEVER; </span><br><span class="line">#更新用户的密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;123456&#x27;; </span><br><span class="line">#刷新权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">#重置密码</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stop $(docker ps -a -q) </span><br><span class="line">docker rm $(docker ps -a -q) </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="运用Docker部署-中级篇"><a href="#运用Docker部署-中级篇" class="headerlink" title="运用Docker部署-中级篇"></a>运用Docker部署-中级篇</h3><p>上面在运行的时候，需要允许的参数太多了，而且 容器有先后顺序，需要在启动mysql容器在启动应用容器</p>
+<p>如果有三四个 甚至更多，启动过程太麻烦，不容易记住。</p>
+<p>可以使用Docker提供的Compose来管理容器。</p>
+<p>可以通过yum下载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>这个版本是1.18的，如果需要最新版本，可以去GitHub上下载</p>
+<p><a href="https://github.com/docker/compose/releases">https://github.com/docker/compose/releases</a></p>
+]]></content>
+      <categories>
+        <category>Linux操作</category>
+      </categories>
+  </entry>
+  <entry>
     <title>面试笔记</title>
     <url>/tianzengde-io/2021/05/14/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>[toc]</p>
@@ -148,29 +729,5 @@
       <categories>
         <category>笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/tianzengde-io/2021/05/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
   </entry>
 </search>
