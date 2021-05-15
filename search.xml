@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>面试笔记</title>
+    <url>/tianzengde-io/2021/05/14/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>[toc]</p>
+<h4 id="PEP8规范"><a href="#PEP8规范" class="headerlink" title="PEP8规范"></a>PEP8规范</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">什么是PEP8规范？</span><br><span class="line">	PEP8规范简单来说就是一种编码规范，是为了使代码“更好看”，更容易被理解和阅读。</span><br><span class="line">PEP8规范</span><br><span class="line">    1 每一级缩进使用4个空格（编辑器都可以完成此功能），不使用Tap，更不能混合使用Tap和空格。</span><br><span class="line">    2 每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。</span><br><span class="line">    3 不能使用单字符作为变量名，变量名要做到见名识意</span><br><span class="line">    4 模块导入的顺序：按标准、三方和自己编写顺序依次导入，之间空一行。</span><br><span class="line">    5 不要在一句import中多个库，比如import os, sys不推荐</span><br><span class="line">    6 类的首字母大写，函数的首字母小写</span><br><span class="line">    7 注释必须要有</span><br><span class="line">    8 函数命名要遵循规范</span><br><span class="line">    10 尽可能使用‘is’‘is not’取代‘==’，比如if x is not None 要优于if x。</span><br><span class="line">    11 异常中try的代码尽可能少。</span><br></pre></td></tr></table></figure>
+
+<h4 id="什么是深拷贝，什么是浅拷贝？"><a href="#什么是深拷贝，什么是浅拷贝？" class="headerlink" title="什么是深拷贝，什么是浅拷贝？"></a>什么是深拷贝，什么是浅拷贝？</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">浅拷贝：copy.copy()</span><br><span class="line">深拷贝：copy.deepcopy()</span><br><span class="line">	<span class="comment"># 浅拷贝只拷贝第一层，修改第一层的内容互不影响，修改深层次的会被影响，浅拷贝的内存地址是相同的</span></span><br><span class="line">    <span class="comment"># 深拷贝相当于递归性质的浅拷贝，相当于在内存中生成了一个完全相同的内容，修改其中的一个变量不会影响另一个变量</span></span><br><span class="line">    <span class="comment"># 对于数字 字符串而言，赋值、浅拷贝、深拷贝无意义，因为永远指向同一内存地址</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Python的自省"><a href="#Python的自省" class="headerlink" title="Python的自省"></a>Python的自省</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">简单一句就是程序员所写的程序在运行时能够获得对象的类型</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>()       查看当前对象的类型</span><br><span class="line"><span class="built_in">dir</span>()        获取当前对象中的全部属性</span><br><span class="line"><span class="built_in">getattr</span>()    获取对象的属性</span><br><span class="line"><span class="built_in">hasattr</span>()    判断对象是否包含某个属性</span><br><span class="line"><span class="built_in">isinstance</span>() 判断对象是否是某个类型的事例</span><br></pre></td></tr></table></figure>
+
+<h4 id="列表和元组的区别"><a href="#列表和元组的区别" class="headerlink" title="列表和元组的区别"></a>列表和元组的区别</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>列表是可变的，数据可以动态变化，元组是不可变的</span><br><span class="line"><span class="number">2.</span>列表一般用来储存同构数据，同构数据就是具有相同意义的数据，aq元组一般用来储存异构数据。</span><br><span class="line"><span class="number">3.</span>列表具有顺序，元组具有结构。</span><br></pre></td></tr></table></figure>
+
+<h4 id="字典的底层"><a href="#字典的底层" class="headerlink" title="字典的底层"></a>字典的底层</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">基本数据类型：整数<span class="built_in">int</span> 字符串<span class="built_in">str</span> 浮点数<span class="built_in">float</span> 布尔型<span class="built_in">bool</span> 列表<span class="built_in">list</span> 字典<span class="built_in">dict</span> 集合<span class="built_in">set</span> 元组<span class="built_in">tuple</span></span><br><span class="line">可变数据类型：列表，字典，集合</span><br><span class="line">不可变数据类型：整型，浮点型，布尔型，字符串，元组</span><br></pre></td></tr></table></figure>
+
+<h2 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h2><h4 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.产生的原因</span></span><br><span class="line">	<span class="number">1.</span>Python 程序在运行时，需要在内存中开辟出一块空间，用于存放运行时产生的临时变量，计算完成后，再将结果输出到永久性存储器中。  </span><br><span class="line">	<span class="number">2.</span>但是当数据量过大，或者内存空间管理不善，就很容易出现内存溢出的情况，程序可能会被操作系统终止。</span><br><span class="line"><span class="comment"># 介绍</span></span><br><span class="line">	引用计数就是编程语言中的一种内存管理技术，它可以将资源被引用的次数保存起来，Python中的每一个对象都有引用计数，每当引用一次这个变量引用次数就会加<span class="number">1</span>，每销毁一次引用次数就减<span class="number">1</span>，当引用次数变成<span class="number">0</span>时对象就会从内存中删除。</span><br><span class="line"><span class="comment"># 引用计数可能导致的问题</span></span><br><span class="line">	当两个或者   两个以上的对象相互引用时，可能会造成循环引用导致无法收回</span><br></pre></td></tr></table></figure>
+
+<h4 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 原因</span></span><br><span class="line">	标记清除的目的是为了解决引用计数器循环引用导致无法收回而产生的技术</span><br><span class="line"><span class="comment"># 介绍</span></span><br><span class="line">	标记清除分为标记和清除两个阶段</span><br><span class="line">    标记阶段：垃圾回收器会对根象进行遍历，可以被根对象访问到的都会打上标记</span><br><span class="line">    清除阶段： 垃圾回收器会对堆内存从头到尾进行遍历，没有被标记的对象就会被清除。</span><br><span class="line"><span class="comment"># 造成的问题</span></span><br><span class="line">	垃圾回收后可能会造成大量的内存碎片，遍历的内存节点较多时，会花费太多的时间在遍历内存节点过程中。</span><br></pre></td></tr></table></figure>
+
+<h4 id="分代回收"><a href="#分代回收" class="headerlink" title="分代回收"></a>分代回收</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 原因</span></span><br><span class="line">	为了解决内存遍历时间太久</span><br><span class="line"><span class="comment"># 介绍</span></span><br><span class="line">	分代是一种典型的以空间换时间的技术，他的思想就是对象存在的时间越长，越可能不是垃圾</span><br><span class="line">    Python中将对象分为三个代，每一个代都是一个链表（当<span class="number">1</span>代满时对<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>代进行标记清除。<span class="number">2</span>代满时对<span class="number">2</span>,<span class="number">3</span>代进行标记清除，<span class="number">3</span>代满后只对自己进行标记清除，同时也是存在时间最久的）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们所写的代码编译完成，没有运行起来的时候就是一个程序</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">已经运行的一个程序就是一个进程，进程是资源分配的最小单位，进程具有独立的内存空间所以不行相互通信</span><br></pre></td></tr></table></figure>
+
+<h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在一个进程内部，要同时干多件事，就需要同时运行多个“子任务”，这些“子任务”就是为线程，由于每个进程至少要干一件事，所以，一个进程至少有一个线程。</span><br><span class="line">线程是系统调度的最小单位，线程才是进程真正的执行者，同一进程下的多个线程共享内存空间，所以可以做到数据共享，但是为了保证数据的安全，必须使用线程锁。</span><br><span class="line">同一进程中的多个线程之间可以并发执行。</span><br></pre></td></tr></table></figure>
+
+<h4 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">协程又叫微线程，纤程，本质就是一个当线程，它可以在单线程处理高并发，因为遇到io会自动切换，这是因为他封装了一个greenlet模块（greenlet模块的作用就是遇到io自动切换），而线程遇到io会等待、阻塞。协程拥有自己的空间，所以无需上下文切换的开销</span><br><span class="line"><span class="comment"># 缺点</span></span><br><span class="line">	协程无法利用多核资源，因为他本质是一个单线程，他不能同时作用于CPU的多个核上。协程需要核进程配合使用才能运行在多个核的CPU上。</span><br><span class="line">    协程如果阻塞掉，整个程序都将阻塞</span><br><span class="line"><span class="comment"># 优点</span></span><br><span class="line">	可以实现高并发，而且节省资源</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程如何通信"><a href="#进程如何通信" class="headerlink" title="进程如何通信"></a>进程如何通信</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">同一程序下进程通信</span><br><span class="line">	进程queue(父子进程通信)</span><br><span class="line">	pipe（同一程序下两个进程通信）</span><br><span class="line">	managers（同一程序下多个进程通信）</span><br><span class="line">Java项目和python项目如何通信</span><br><span class="line">	RabbitMQ、redis等（不同程序间通信）</span><br></pre></td></tr></table></figure>
+
+<h4 id="僵尸进程"><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">父进程产生子进程后，子进程先于父进程退出,但是父进程由于种种原因，并没有处理子进程发送的退出信号，那么这个子进程就会成为僵尸进程。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="python内置的高阶方法"><a href="#python内置的高阶方法" class="headerlink" title="python内置的高阶方法"></a>python内置的高阶方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.map(function,iterable)</span><br><span class="line">	将可迭代对象的每一个元素作为参数传入指定函数对元素进行操作，最终返回一个迭代器，map用于对可迭代对象中的每一个元素进行同样的操作</span><br><span class="line">2.reduce(函数，可迭代对象)</span><br><span class="line">	将可迭代对象的第一、二个元素传入function中进行操作，并得到一个结果，再将这个结果和可迭代对象的第三个参数一起传入function中再次进行操作，直到所有元素传入完毕，最后得到一个结果，reduce可以对可迭代对象的每一个元素做积累操作</span><br><span class="line">3.filter(函数，可迭代对象)</span><br><span class="line">	将可迭代对象的元素依次传入function中，如果这个元素传入后，函数返回True，则这个元素保留下了，如果一个元素传入函数后，函数返回False，则这个元素被抛弃掉，最终保留下来的所有元素放置在一个迭代器中，filter可以实现筛选功能</span><br><span class="line">4.sorted(iterable,key=function ,reverse=false)</span><br><span class="line">	将可迭代对象传入key指定的函数中，key需要一个返回结果，sortde会根据key返回的结果进行排序，并将所有的元素放置在一个列表中</span><br><span class="line">5.zip(可迭代对象，可迭代对象)</span><br><span class="line">	将传入参数相同索引位置的值组合在一起，返回这些数据组成的元组组成的zip对象，如果传入的可迭代对象中的元素个数不一致，则返回的对象的长度与最短的对象长度一致</span><br></pre></td></tr></table></figure>
+
+<h4 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">定义：如果一个函数在内部调用自身本身，这个函数就是递归函数</span><br><span class="line">优点：递归函数定义简单，逻辑清晰。理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑不如递归函数</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用递归写斐波那契数  1 1 2 3 5 8</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fbnq</span>(<span class="params">n</span>):</span>		<span class="comment"># n 表示第几个斐波那契数</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fbnq(n-<span class="number">1</span>)+fbnq(n-<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(fbnq(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">lambda</span>表达式也叫匿名函数，如果我们不想在程序中对一个函数使用两次，就可以用到<span class="keyword">lambda</span>表达式，它可以使代码更简单、简洁。<span class="keyword">lambda</span>返回是是一个function类型。</span><br><span class="line"><span class="keyword">lambda</span>语句中，冒号前是参数，可以有多个，用逗号隔开，冒号右边的返回值，如果没有参数，则<span class="keyword">lambda</span>冒号前面就没有</span><br><span class="line">	</span><br><span class="line"><span class="keyword">lambda</span> 参数:操作(参数)</span><br><span class="line"><span class="keyword">lambda</span> [arg1[,arg2,arg3....argN]]:expression</span><br></pre></td></tr></table></figure>
+
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">闭包就是内外函数的嵌套，内层函数引用外层函数传进来的参数，外层函数引用内层函数对象。</span><br><span class="line"><span class="comment"># 注意</span></span><br><span class="line">		<span class="number">1.</span>必须有内层函数与外层函数</span><br><span class="line">		<span class="number">2.</span>内层函数必须引用外层函数的局部变量</span><br><span class="line">		<span class="number">3.</span>外层函数返回内层函数的引用或直接内层函数的调用</span><br><span class="line">优点：为变量续命</span><br><span class="line">缺点：浪费内存</span><br><span class="line"></span><br><span class="line">闭包的验证使用__closure__方法，如果返回cell则表示闭包，如果返回<span class="literal">None</span>则不是闭包</span><br></pre></td></tr></table></figure>
+
+<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">装饰器就是在不改变原函数代码的前提下给原函数增加新的功能，它引用了闭包是思路，外层函数返回的是内层函数对象</span><br></pre></td></tr></table></figure>
+
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h4 id="面向对象三要素"><a href="#面向对象三要素" class="headerlink" title="面向对象三要素"></a>面向对象三要素</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">三要素：封装，继承，多态</span><br><span class="line">	封装：将代码封装到某个地方，需要使用时再去调用</span><br><span class="line">    继承：子类继承父类，子类拥有父类的所有方法，并且可以覆盖重写，如果一个类继承多个父类，优先继承第一个父类的同名属性和方法</span><br><span class="line">    多态：父类的同一种动作或者行为，在不同的子类上有不同的实现</span><br></pre></td></tr></table></figure>
+
+<h4 id="六大原则"><a href="#六大原则" class="headerlink" title="六大原则"></a>六大原则</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">类的单一职责:指类的功能要单一，不能包罗万象</span><br><span class="line"></span><br><span class="line">开放封闭原则：对扩展开放，对修改关闭。</span><br><span class="line">	<span class="comment"># 对扩展开放，意味着有新的需求或变化时，可以对现有的代码进行扩展，以适应新的情况</span></span><br><span class="line">    <span class="comment"># 对修改封闭，在对模块功能进行扩展时，不应该影响已有的程序模块。</span></span><br><span class="line"></span><br><span class="line">依赖倒置原则：体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。</span><br><span class="line"></span><br><span class="line">里式替换原则：子类可以替换父类出现的任何位置，因为父类的任何修改都完全依靠子类来补充和修改，从而进一步实现开闭原则。</span><br><span class="line"></span><br><span class="line">组合复用原则：使用耦合度相对较低的关联方式替换耦合度最高的泛化方式</span><br><span class="line"></span><br><span class="line">迪米特法则：它的主要思想就是类与类之间尽可能不要有太多的关联，当一个类需要变化时，对其他类基本没有影响。</span><br></pre></td></tr></table></figure>
+
+<h4 id="面向对象MRO"><a href="#面向对象MRO" class="headerlink" title="面向对象MRO"></a>面向对象MRO</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MRO 就是继承时查找的顺序，用来确定在多继承的情况下，子类查找父类同名属性的顺序</span><br></pre></td></tr></table></figure>
+
+<h4 id="多继承的顺序"><a href="#多继承的顺序" class="headerlink" title="多继承的顺序"></a>多继承的顺序</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多继承就是一个子类继承两个或两个以上的父类</span><br><span class="line">如果一个类继承多个父类，优先继承第一个父类的同名属性和方法</span><br><span class="line">python2是深度优先，python3是广度优先</span><br></pre></td></tr></table></figure>
+
+<h4 id="super方法"><a href="#super方法" class="headerlink" title="super方法"></a>super方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">super是一个可以在子类中获取父类的一个方法</span><br><span class="line">super可以用来解决多继承中涉及到查找顺序(MRO)、重复调用的问题</span><br></pre></td></tr></table></figure>
+
+<h4 id="self的意义"><a href="#self的意义" class="headerlink" title="self的意义"></a>self的意义</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">self用来指向当前的实例，在类中，具有self指针指向的属性为实例属性，只可以被实例访问。</span><br><span class="line">当实例调用方法或者变量时，实例到底的第一个参数会自动传入当前的实例，形参名为self</span><br></pre></td></tr></table></figure>
+
+<h4 id="isinstance方法"><a href="#isinstance方法" class="headerlink" title="isinstance方法"></a>isinstance方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">判断一个对象是否是一个已知的类型</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__new__:创建初始化后的一个实例对象</span><br><span class="line">__init__:给实例化对象添加一个属性</span><br><span class="line">__del__:在实例销毁前调用，释放内存空间</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="静态方法、类方法、属性方法"><a href="#静态方法、类方法、属性方法" class="headerlink" title="静态方法、类方法、属性方法"></a>静态方法、类方法、属性方法</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">静态方法</span><br><span class="line">	特点：名义上归类管理，实际上不能访问类或者变量中的任意属性或者方法</span><br><span class="line">	作用：让我们代码清晰，更好管理</span><br><span class="line">	调用方式: 既可以被类直接调用，也可以通过实例调用</span><br><span class="line">类方法</span><br><span class="line">	作用: 无需实例化直接被类调用</span><br><span class="line">	特性: 类方法只能访问类变量，不能访问实例变量</span><br><span class="line">	类方法使用场景: 当我们还未创建实例，但是需要调用类中的方法</span><br><span class="line">	调用方式: 既可以被类直接调用，也可以通过实例调用</span><br><span class="line">属性方法</span><br><span class="line">	属性方法把一个方法变成一个属性，隐藏了实现细节,调用时不必加括号直接d.eat即可调用self.eat()方法</span><br></pre></td></tr></table></figure>
+
+<h4 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">反射和Python中的自省差不多，可以通过某些函数来获取一个对象的属性方法等</span><br><span class="line">dir: 获取当前对象的内部属性</span><br><span class="line">type: 查看当前对象的类型</span><br><span class="line">hasattr: 判断当前类是否有这个方法</span><br><span class="line">getattr: 通过字符串反射出这个方法的内存地址</span><br><span class="line">setattr：将当前类添加一个方法</span><br><span class="line">delatrr: 删除实例属性</span><br></pre></td></tr></table></figure>
+
+<h4 id="猴子补丁"><a href="#猴子补丁" class="headerlink" title="猴子补丁"></a>猴子补丁</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">猴子补丁就是在程序后面追加的更新部分</span><br><span class="line">用处：</span><br><span class="line">	在行时可以替换属性和方法</span><br><span class="line">	可以在不修改源码的勤快下对功能进行追加和变更</span><br><span class="line">	运行时为内存中的对象增加补丁，而不是在磁盘原代码中增加</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">迭代器就是访问集合内元素的一种方法。它总是从集合内的第一个元素访问，直到所有元素都被访问</span><br><span class="line">迭代器包含两个方法</span><br><span class="line">	__iter__：返回迭代器本身</span><br><span class="line">	__next__：返回下一个元素</span><br></pre></td></tr></table></figure>
+
+<h4 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a>可迭代对象</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">可迭代对象都是含有__iter__方法的，可以背for循环遍历的都是可迭代对象</span><br></pre></td></tr></table></figure>
+
+<h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">只要封装了一个yield方法的函数就是一个生成器，生成器也是特殊的迭代器</span><br></pre></td></tr></table></figure>
+
+<h4 id="py2和py3的区别"><a href="#py2和py3的区别" class="headerlink" title="py2和py3的区别"></a>py2和py3的区别</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">py2中的print是一个语句，py3中的print是一个方法</span><br><span class="line">py2中除法结果是一个整数，py3中的除法结果是浮点数</span><br><span class="line">py2默认为Ascii编码，py3默认为Unicode（utf-8）</span><br><span class="line">py2 xrange()是创建一个迭代对象，py3中的range()返回的是一个list</span><br></pre></td></tr></table></figure>
+
+<h4 id="编译型语言和解释型语言"><a href="#编译型语言和解释型语言" class="headerlink" title="编译型语言和解释型语言"></a>编译型语言和解释型语言</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译型语言</span></span><br><span class="line">	编译型语言就是程序在执行前需要有一个专门的编译过程，把程序源文件编译为一个机器可以识别的语言文件，运行时不需要重新编译。编译型的执行效率高，但是编译型语言依赖编译器，跨平台型差。</span><br><span class="line"><span class="comment"># 解释型语言</span></span><br><span class="line">	解释型语言就是说我们的代码在运行前不需要进行编译，而是在运行时边解释边翻译。解释型语言执行的效率底但是跨平台性好</span><br></pre></td></tr></table></figure>
+
+<h4 id="c-s架构"><a href="#c-s架构" class="headerlink" title="c/s架构"></a>c/s架构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C/S架构(Client/Server),也叫客户机/服务器模式</span><br><span class="line">优点：</span><br><span class="line">	c/s架构的界面和操作可以很丰富，更好的满足客户需求</span><br><span class="line">	客户端和服务端直接连接。点对点的连接方式更安全，可以直接操作本地文本，比较方便。</span><br><span class="line">	本地响应的速度快，在硬件和网络环境不好的条件下用C/S架构可以提高效率</span><br></pre></td></tr></table></figure>
+
+<h4 id="B-S架构"><a href="#B-S架构" class="headerlink" title="B/S架构"></a>B/S架构</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">B/S架构(Browser/Server)，浏览器/服务器结构</span><br><span class="line">优点：</span><br><span class="line">	无需安装客户端，有web浏览器即可</span><br><span class="line">	B/S架构可以直接放在广域网上，通过一定的权限控制实现多客户端访问的目的，交互性极强。</span><br><span class="line">    B/S架构无需升级客户端，升级服务器即可，可以随时更新版本，无需用户重新下载。</span><br><span class="line">缺点：</span><br><span class="line">	很难达到C/S架构的程度</span><br><span class="line">    需要在速度的安全性能上花费巨大精力，</span><br><span class="line">    可能跨浏览器时无法很好的兼容</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">应用层</span><br><span class="line">表示层</span><br><span class="line">会话层</span><br><span class="line">传输层</span><br><span class="line">网络层</span><br><span class="line">数据链路层</span><br><span class="line">物理层</span><br></pre></td></tr></table></figure>
+
+<h4 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>TCP提供可靠的服务，也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>Tcp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>TCP对系统资源要求较多，UDP对系统资源要求较少。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h4 id="储存引擎的作用"><a href="#储存引擎的作用" class="headerlink" title="储存引擎的作用"></a>储存引擎的作用</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>数据库管理系统通过引擎对数据进行增删改查</span><br><span class="line"><span class="number">2.</span>不同的储存引擎提供了不同的储存机制，索引技巧，锁定水平</span><br><span class="line"><span class="number">3.</span>使用不同的储存引擎，还可以获得其特定的功能</span><br></pre></td></tr></table></figure>
+
+<h4 id="MySQL的引擎"><a href="#MySQL的引擎" class="headerlink" title="MySQL的引擎"></a>MySQL的引擎</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">* innoDB</span><br><span class="line">* MySAM</span><br><span class="line">Memory		速度很快，数据都储存在内存中不需要进行磁盘IO，重启后数据丢失，表结构保留，是非持久化的</span><br><span class="line">Blackhole   没有任何储存实现，插入数据会被丢弃，但操作记录会保存在储存日志中</span><br></pre></td></tr></table></figure>
+
+<h4 id="Innodb储存引擎的特点‘"><a href="#Innodb储存引擎的特点‘" class="headerlink" title="Innodb储存引擎的特点‘"></a>Innodb储存引擎的特点‘</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">InnoDB是事务性数据库的默认引擎，也是首选引擎</span><br><span class="line">InnoDB支持事务，外键，行锁定，具有提交回滚和奔溃回复的能力</span><br><span class="line">InnoDB为处理巨大数据量的最大性能而设定，所以InnoDB也经常被用在众多需要高性能的大型数据库站点上</span><br></pre></td></tr></table></figure>
+
+<h4 id="InnoDB事务原理"><a href="#InnoDB事务原理" class="headerlink" title="InnoDB事务原理"></a>InnoDB事务原理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">事务（Transaction）是数据库区别于文件系统的重要特性之一，是一组原子性的SQL查询，事务会把数据库从一种一致性状态转换为另一种一致性状态。</span><br><span class="line">在数据库提交时，可以确保要么所有修改都已保存，要么所有修改都不保存。</span><br></pre></td></tr></table></figure>
+
+<h4 id="事务四大特性"><a href="#事务四大特性" class="headerlink" title="事务四大特性"></a>事务四大特性</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原子性：整个事物的所有操作要么全部提交成功，要么全部失败回滚(要么全部执行，要么全部回滚)。</span><br><span class="line">一致性：数据库从一种一致性的状态转换到另一种一致性的状态。</span><br><span class="line">隔离性：一个事务的修改在最终提交之前，对其他事务是不可见的。</span><br><span class="line">持久性: 一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</span><br></pre></td></tr></table></figure>
+
+<h4 id="事务的隔离级性"><a href="#事务的隔离级性" class="headerlink" title="事务的隔离级性"></a>事务的隔离级性</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">脏读：一个事务读到了另一个事务未提交的数据</span><br><span class="line"></span><br><span class="line">幻读：一个线程中的事务读到了另一个线程中提交的插入或更新的数据，读到的记录条数不一致</span><br><span class="line">	<span class="comment"># 事务A对全部记录做了更新操作，尚未提交前，事务B又插入了一条记录，那么事务A再次读取数据库时，会发现还有一条记录（即事务B新插入的记录）没有做更新</span></span><br><span class="line"></span><br><span class="line">可重复读：在整个事务操作过程中，拿到的数据绝对不会变，随便重复读</span><br><span class="line"></span><br><span class="line">不可重复读：一个线程中的事务读到了另一个线程中提交的更新数据，读到的内容不一致</span><br><span class="line">		<span class="comment"># 事务B在事务A的更新操作前读到的数据，跟在事务A提交此更新操作后读到的数据，可能不同。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不可重复读重点在于更新(updata)和删除(delete)，而幻读重点在于插入(insert)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">读未提交 (Read uncommitted)：</span><br><span class="line">	一个事务读到了另一个事务未提交的修改</span><br><span class="line">	另一个事务提交不成功带来脏读，提交成功带来幻读、不可重复读的问题</span><br><span class="line"></span><br><span class="line">读已提交 (Read committed)：</span><br><span class="line">	一个事务只能读另一个事务已经提交的修改</span><br><span class="line">	它避免了脏读，但是另一个事务提交成功了，还存在不可重复读和幻读的问题</span><br><span class="line"></span><br><span class="line">可重复读（Repeatable Read）：</span><br><span class="line">	同一个事务中多次读取相同的数据返回的结果是相同的</span><br><span class="line">	避免了脏读和不可重复读，但幻读仍然存在</span><br><span class="line"></span><br><span class="line">串行化 （Serializable）：</span><br><span class="line">	最严格的事务隔离级别，要求所有事务被串行执行，不能并发执行，可避免脏读、不可重复读、幻读情况的发生</span><br><span class="line">	但可能导致大量的超时现象和锁竞争，效率低，很少使用</span><br><span class="line"></span><br><span class="line"><span class="comment"># MySQL默认的隔离级别为可重复读</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事务的并发"><a href="#事务的并发" class="headerlink" title="事务的并发"></a>事务的并发</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">事务的并发可能出现 脏读，幻读，不可重复读</span><br></pre></td></tr></table></figure>
+
+<h4 id="脏页"><a href="#脏页" class="headerlink" title="脏页"></a>脏页</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当内存数据页和磁盘中数据页(数据库中数据页) 内容不一致的时候，我们称内存页为 脏页。</span><br><span class="line"></span><br><span class="line">内容一致的时候，成为干净页。</span><br><span class="line"></span><br><span class="line">更新的操作，都写到内存、日志中，不会马上同步到磁盘数据，这个时候内存数据页就是脏页。</span><br><span class="line"></span><br><span class="line">一条SQL语句 正常快，有时候慢，这个慢的时候 可能就是将脏页同步到磁盘上。</span><br></pre></td></tr></table></figure>
+
+<h4 id="脏页同步"><a href="#脏页同步" class="headerlink" title="脏页同步"></a>脏页同步</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redo log写满了，停止更新，需要将更新的部分日志对应的脏页同步到磁盘。</span><br><span class="line"></span><br><span class="line">当系统内存不足时，淘汰部分数据页，如果是脏页，则先更新脏页。</span><br><span class="line"></span><br><span class="line">mysql正常关闭时，会把内存脏页都同步到磁盘上。</span><br></pre></td></tr></table></figure>
+
+<h4 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">B+树是B树的变体，比B树的查询效率更高</span><br><span class="line"></span><br><span class="line">特点：</span><br><span class="line">	中间节点不存数据，数据都存到叶子节点</span><br><span class="line">	叶子节点由链表组成，且前后相连，形成 环形链表</span><br><span class="line">	中间节点存储子节点的 最大值或最小值。</span><br></pre></td></tr></table></figure>
+
+<h4 id="B-树比B树更适合数据库索引"><a href="#B-树比B树更适合数据库索引" class="headerlink" title="B+树比B树更适合数据库索引"></a>B+树比B树更适合数据库索引</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">文件或数据库存储的数据都很大，不能都放入到内存中，必须在磁盘中进行读写，则索引应该尽可能少对磁盘进行IO操作。</span><br><span class="line"></span><br><span class="line">B+树相比B树更矮，查询IO次数更少。</span><br><span class="line"></span><br><span class="line">B+树查询都是查到叶子节点，查询更稳定。</span><br><span class="line"></span><br><span class="line">B+树方便扫库(遍历)，B+树直接从子节点挨个扫一遍就可以，支持range-query非常方便。</span><br></pre></td></tr></table></figure>
+
+<h4 id="主键-使用自增ID还是UUID"><a href="#主键-使用自增ID还是UUID" class="headerlink" title="主键 使用自增ID还是UUID"></a>主键 使用自增ID还是UUID</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">对于InnoDB的主索引，数据会安装主键进行排列，由于UUID是无序的，会产生很大IO压力，因此UUID不适合做物理主键，物理主键使用自增ID，可以把UUID作为逻辑主键。</span><br><span class="line"></span><br><span class="line">在实际开发中 如果历史数据表与 当前数据表进行合表操作，两个表都是自增id做主键，如果合并，id会造成冲突，这个时候使用UUID做id的值，则id是相互独立的，不会存在数据表合并的问题。</span><br></pre></td></tr></table></figure>
+
+<h4 id="什么是索引"><a href="#什么是索引" class="headerlink" title="什么是索引"></a>什么是索引</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">索引是一种数据结构，索引相当于一本书的目录，可以通过索引更快的查询到数据</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="聚集索引和非聚集索引"><a href="#聚集索引和非聚集索引" class="headerlink" title="聚集索引和非聚集索引"></a>聚集索引和非聚集索引</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">聚集（clustered）索引，也叫聚簇索引。</span><br><span class="line">数据行的物理顺序与列值（一般是主键的那一列）的逻辑顺序相同，一个表中只能拥有一个聚集索引。</span><br><span class="line">MySQL里主键就是聚集索引</span><br><span class="line"></span><br><span class="line">除聚集索引之外的索引都是非聚集索引，比如普通索引，唯一索引，全文索引</span><br><span class="line">该索引中索引的逻辑顺序与磁盘上行的物理存储顺序不同，一个表中可以拥有多个非聚集索引。          </span><br><span class="line">如果查询的列中含有非聚集索引没有覆盖的列时，就会进行二次查询也就是回表查询，影响查询效率</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="bin-log日志"><a href="#bin-log日志" class="headerlink" title="bin-log日志"></a>bin-log日志</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin-log日志是服务层的二进制日志，也被称为归档日志</span><br><span class="line">bin-log主要记录数据库的变化情况，所有涉及数据变动的操作都要记录到bin-log中</span><br><span class="line">因此经常被用在对数据的复制和备份上，也经常被用在主从同步上</span><br></pre></td></tr></table></figure>
+
+<h4 id="MySQL的事务日志有哪些"><a href="#MySQL的事务日志有哪些" class="headerlink" title="MySQL的事务日志有哪些"></a>MySQL的事务日志有哪些</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">InnoDB的事务日志包括redo log和undo log</span><br><span class="line">redo log 是重做日志，提供前滚操作</span><br><span class="line">undo log 是回滚日志，提供回滚操作</span><br><span class="line"></span><br><span class="line">redo log 和undo log 都是处于InnoDB引擎层的日志，</span><br></pre></td></tr></table></figure>
+
+<h4 id="重做日志（redo-log）"><a href="#重做日志（redo-log）" class="headerlink" title="重做日志（redo log）"></a>重做日志（redo log）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redo log 一般用来记录事务操作引起的数据变化，记录的是数据页的物理修改</span><br><span class="line"></span><br><span class="line">InnoDB对数据进行更新的时候，首先会将更新记录写入redo log中然后再系统空闲的时候才会将日志中的内容更新到磁盘中</span><br><span class="line"></span><br><span class="line">他运用了预写式技术，大大减少了IO操作的频率，提高了数据刷新的效率</span><br></pre></td></tr></table></figure>
+
+<h4 id="回滚日志（undo-log）"><a href="#回滚日志（undo-log）" class="headerlink" title="回滚日志（undo log）"></a>回滚日志（undo log）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">undo log可以对数据进行回滚，还可以实现MVCC</span><br><span class="line"></span><br><span class="line">当事务对数据库进行修改时，InnoDB不仅会记录redo log，还会生成对应的undo log日志</span><br><span class="line">如果事务执行失败或者调用了rollback，导致事务回滚，就可以利用undo log中的信息将数据回滚到事务操作之前的样子</span><br></pre></td></tr></table></figure>
+
+<h4 id="bin-log-和-redo-log的区别"><a href="#bin-log-和-redo-log的区别" class="headerlink" title="bin-log 和 redo log的区别"></a>bin-log 和 redo log的区别</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin-log二进制日志是储存引擎上层产生的，不管是什么储存引擎，只要对数据库进行修改，都会产生二进制日志，记录的是SQL语句的原始逻辑</span><br><span class="line">redolog是InnoDB层产生的一种物理日志，记录的的是对某个数据进行了什么样的修改</span><br><span class="line"></span><br><span class="line">bin-log二进制日志比redolog先记录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/tianzengde-io/2021/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+</search>
