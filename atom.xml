@@ -6,10 +6,81 @@
   <link href="https://tianzengde.github.io/tianzengde-io/atom.xml" rel="self"/>
   
   <link href="https://tianzengde.github.io/tianzengde-io/"/>
-  <updated>2021-05-15T14:57:10.520Z</updated>
+  <updated>2021-05-17T12:19:20.568Z</updated>
   <id>https://tianzengde.github.io/tianzengde-io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dockerfile的使用</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/17/Dockerfile%E4%BD%BF%E7%94%A8/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/17/Dockerfile%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-05-17T12:19:40.208Z</published>
+    <updated>2021-05-17T12:19:20.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Dockerfile使用&quot;&gt;&lt;a href=&quot;#Dockerfile使用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Docker操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Docker%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Docker启动服务容器</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2021-05-17T12:08:21.490Z</published>
+    <updated>2021-05-17T12:08:51.768Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;启动服务容器&quot;&gt;&lt;a href=&quot;#启动服务容器&quot; class=&quot;headerlink&quot; title=&quot;启动服务容器&quot;&gt;&lt;/a&gt;启动服务容器&lt;/h1&gt;&lt;p&gt;如果想要容器 长时间运行 作为服务，需要加-d 后台运行 &lt;/p&gt;
+&lt;p&gt;-d执行的容器</summary>
+        
+      
+    
+    
+    
+    <category term="Docker操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Docker%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Docker基础</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/17/Docker%E5%9F%BA%E7%A1%80/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2021/05/17/Docker%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-05-17T11:52:50.480Z</published>
+    <updated>2021-05-17T12:00:22.285Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h2 id=&quot;一、Docker安装&quot;&gt;&lt;a href=&quot;#一、Docker安装&quot; class=&quot;headerlink&quot; title=&quot;一、Docker安装&quot;&gt;&lt;/a&gt;一、Docker安装&lt;/h2&gt;&lt;h3 id=&quot;CentOS安装&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Docker操作" scheme="https://tianzengde.github.io/tianzengde-io/categories/Docker%E6%93%8D%E4%BD%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>CentOS7软件安装-详细版</title>
@@ -127,31 +198,6 @@
     
     <category term="笔记" scheme="https://tianzengde.github.io/tianzengde-io/categories/%E7%AC%94%E8%AE%B0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://tianzengde.github.io/tianzengde-io/2021/05/14/hello-world/"/>
-    <id>https://tianzengde.github.io/tianzengde-io/2021/05/14/hello-world/</id>
-    <published>2021-05-14T02:33:07.115Z</published>
-    <updated>2021-05-15T04:15:56.479Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="GitHub" scheme="https://tianzengde.github.io/tianzengde-io/categories/GitHub/"/>
-    
-    
-    <category term="github" scheme="https://tianzengde.github.io/tianzengde-io/tags/github/"/>
     
   </entry>
   

@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>About Me |  梦里花落的博客</title>
+      <title>Docker基础 |  梦里花落的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -46,8 +46,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="page-"
-  class="article article-type-page"
+  id="post-Docker基础"
+  class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -57,16 +57,122 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  About Me
+  Docker基础
 </h1>
  
 
       
     </header>
-       
+     
+    <div class="article-meta">
+      <a href="/tianzengde-io/2021/05/17/Docker%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-05-17T11:52:50.480Z" itemprop="datePublished">2021-05-17</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/tianzengde-io/categories/Docker%E6%93%8D%E4%BD%9C/">Docker操作</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">935</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
-  <h4 id="姓名-田增德"><a href="#姓名-田增德" class="headerlink" title="姓名: 田增德"></a>姓名: 田增德</h4><h5 id="QQ-2876301284"><a href="#QQ-2876301284" class="headerlink" title="QQ:2876301284"></a>QQ:2876301284</h5><h5 id="邮箱：-x32-x38-x37-x36-51-x30-x31-x32-56-x34-x40-113-x71-x2e-x63-x6f-109"><a href="#邮箱：-x32-x38-x37-x36-51-x30-x31-x32-56-x34-x40-113-x71-x2e-x63-x6f-109" class="headerlink" title="邮箱：&#x32;&#x38;&#x37;&#x36;&#51;&#x30;&#x31;&#x32;&#56;&#x34;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;"></a>邮箱：<a href="mailto:&#x32;&#x38;&#x37;&#x36;&#51;&#x30;&#x31;&#x32;&#56;&#x34;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#x32;&#x38;&#x37;&#x36;&#51;&#x30;&#x31;&#x32;&#56;&#x34;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a></h5> 
+  <p>[toc]</p>
+<h2 id="一、Docker安装"><a href="#一、Docker安装" class="headerlink" title="一、Docker安装"></a>一、Docker安装</h2><h3 id="CentOS安装"><a href="#CentOS安装" class="headerlink" title="CentOS安装"></a>CentOS安装</h3><p>1.安装yum工具命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+
+<p>2.添加docker的仓库repo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<p>3.安装docker引擎</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<p>4.启动Docker服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<p>5.测试docker</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从Docker Hub网站上 拉取一个 hello-world镜像 然后运行</span></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、docker卸载"><a href="#二、docker卸载" class="headerlink" title="二、docker卸载"></a>二、docker卸载</h2><p>1、查询docker安装过的包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list installed | grep docker</span><br></pre></td></tr></table></figure>
+
+<p>2、删除安装包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker-ce.x86_64 docker-ce-cli.x86_64 -y</span><br></pre></td></tr></table></figure>
+
+<p>3、删除镜像/容器等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、docker镜像"><a href="#三、docker镜像" class="headerlink" title="三、docker镜像"></a>三、docker镜像</h2><h4 id="1-查看本地镜像"><a href="#1-查看本地镜像" class="headerlink" title="1.查看本地镜像"></a>1.查看本地镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line">docker image ls </span><br></pre></td></tr></table></figure>
+
+<p>REPOSITORY：表示镜像的仓库源</p>
+<p>TAG：镜像的标签</p>
+<p>IMAGE ID：镜像ID</p>
+<p>CREATED：镜像创建时间</p>
+<p>SIZE：镜像大小<br>同一仓库源可以有多个 TAG，代表这个仓库源的不同个版本，如 ubuntu 仓库源里，有 15.10、14.04 等多个不同的版本，我们使用 REPOSITORY:TAG 来定义不同的镜像。</p>
+<h4 id="2-拉取镜像"><a href="#2-拉取镜像" class="headerlink" title="2.拉取镜像"></a>2.拉取镜像</h4><p>我们的镜像都可以存放到Docker Hub网站(gitee码云)上，这是一个开源的镜像库</p>
+<p>如果从这个网站上 下载东西 就可以使用 pull 拉取  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull </span><br><span class="line"></span><br><span class="line"># 下载mysql</span><br><span class="line">docker image pull mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<p>如果没有添加版本tag 则下载默认的最新版本 mysql:latest</p>
+<h4 id="3-删除镜像"><a href="#3-删除镜像" class="headerlink" title="3.删除镜像"></a>3.删除镜像</h4><p>docker rm</p>
+<p>如果 镜像被容器在使用，默认是不能删除的，可以通过 -f 强制删除</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker rmi hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除所有镜像</span></span><br><span class="line">docker rm $(docker ps -aq)</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、容器-container-操作"><a href="#四、容器-container-操作" class="headerlink" title="四、容器(container)操作"></a>四、容器(container)操作</h2><h4 id="1-运行容器"><a href="#1-运行容器" class="headerlink" title="1.运行容器"></a>1.运行容器</h4><p>在本地 如果有镜像 就可以运行该镜像 生成容器，如果镜像不存在 会去网上pull后在运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run 镜像名</span><br></pre></td></tr></table></figure>
+
+<p>–name 在启动的时候给容器定义一个名字</p>
+<p>-d  后台运行容器</p>
+<p>–interactive , -i        交互</p>
+<p>–tty , -t      终端</p>
+<p>这两个一般都是一起用 -it 就是交互式启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker  run --name  mycentos  -it  centos:7 </span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查看容器"><a href="#2-查看容器" class="headerlink" title="2.查看容器"></a>2.查看容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps  查看 所有活跃的容器</span><br><span class="line"></span><br><span class="line">docker ps -a  查看所有容器 包括停止的</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：此时虽然容器已经在运行中，但是镜像占用的端口是 Docker 容器内部的端口，并不是服务器的端口，所以必须做 端口映射 将服务器的实际端口映射到 Docker 容器中的端口才能访问。</p>
+<h4 id="3-启动容器"><a href="#3-启动容器" class="headerlink" title="3.启动容器"></a>3.启动容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start container-name/container-id (容器名/容器id)</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-停止容器"><a href="#4-停止容器" class="headerlink" title="4.停止容器"></a>4.停止容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器名/容器id</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-删除容器"><a href="#5-删除容器" class="headerlink" title="5.删除容器"></a>5.删除容器</h4><p>删除容器前，必须先停止容器运行，根据 容器 id 进行删除</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器id</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除所有已停止的容器</span></span><br><span class="line">docker rm $(docker ps -aq) </span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意</strong>：rm 参数是删除容器，rmi 参数是删除镜像</p>
+<p>镜像运行在容器中，docker 中可以运行多个互补干扰的容器，可以将同一个镜像在多个容器中进行运行</p>
+<h4 id="6-端口映射"><a href="#6-端口映射" class="headerlink" title="6.端口映射"></a>6.端口映射</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name container-name:tag -d -p 服务器端口:Docker 端口 image-name</span><br></pre></td></tr></table></figure>
+
+<p>–name：自定义容器名，不指定时，docker 会自动生成一个名称<br>-d：表示后台运行容器<br>image-name：指定运行的镜像名称以及 Tag<br>-p 表示进行服务器与 Docker 容器的端口映射，默认情况下容器中镜像占用的端口是 Docker 容器中的端口与外界是隔绝的，必须进行端口映射才能访问</p>
+<h4 id="7-从容器中提取出镜像"><a href="#7-从容器中提取出镜像" class="headerlink" title="7.从容器中提取出镜像"></a>7.从容器中提取出镜像</h4><p>如果我们给现有的容器做了修改，而且这个修改以后还要常用，我们就可以提取出镜像，作为一个新的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</span><br><span class="line"></span><br><span class="line"># 案例</span><br><span class="line">docker  commit -a &quot;刘某人&quot; -m &quot;看你不爽,修改一下&quot;  d62332d7bf22  mycentos:7.1</span><br></pre></td></tr></table></figure>
+
+ 
       <!-- reward -->
       
     </div>
@@ -130,7 +236,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/about/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/05/17/Docker%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -139,8 +245,28 @@
   </div>
 
    
-  
+  <nav class="article-nav">
     
+      <a href="/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Docker启动服务容器
+          
+        </div>
+      </a>
+    
+    
+      <a href="/tianzengde-io/2021/05/15/%E8%99%9A%E6%8B%9F%E6%9C%BA_CentOS--%E7%B2%BE%E5%93%81/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">CentOS7软件安装-详细版</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
 </article>
 
 </section>
@@ -293,6 +419,22 @@
 <script src="/tianzengde-io/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/tianzengde-io/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link

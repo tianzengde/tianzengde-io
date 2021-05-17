@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>About Me |  梦里花落的博客</title>
+      <title>Docker启动服务容器 |  梦里花落的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -46,8 +46,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="page-"
-  class="article article-type-page"
+  id="post-Docker启动服务器"
+  class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -57,16 +57,90 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  About Me
+  Docker启动服务容器
 </h1>
  
 
       
     </header>
-       
+     
+    <div class="article-meta">
+      <a href="/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+  <time datetime="2021-05-17T12:08:21.490Z" itemprop="datePublished">2021-05-17</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/tianzengde-io/categories/Docker%E6%93%8D%E4%BD%9C/">Docker操作</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">582</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
-  <h4 id="姓名-田增德"><a href="#姓名-田增德" class="headerlink" title="姓名: 田增德"></a>姓名: 田增德</h4><h5 id="QQ-2876301284"><a href="#QQ-2876301284" class="headerlink" title="QQ:2876301284"></a>QQ:2876301284</h5><h5 id="邮箱：-x32-x38-x37-x36-51-x30-x31-x32-56-x34-x40-113-x71-x2e-x63-x6f-109"><a href="#邮箱：-x32-x38-x37-x36-51-x30-x31-x32-56-x34-x40-113-x71-x2e-x63-x6f-109" class="headerlink" title="邮箱：&#x32;&#x38;&#x37;&#x36;&#51;&#x30;&#x31;&#x32;&#56;&#x34;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;"></a>邮箱：<a href="mailto:&#x32;&#x38;&#x37;&#x36;&#51;&#x30;&#x31;&#x32;&#56;&#x34;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#x32;&#x38;&#x37;&#x36;&#51;&#x30;&#x31;&#x32;&#56;&#x34;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a></h5> 
+  <h1 id="启动服务容器"><a href="#启动服务容器" class="headerlink" title="启动服务容器"></a>启动服务容器</h1><p>如果想要容器 长时间运行 作为服务，需要加-d 后台运行 </p>
+<p>-d执行的容器 不会直接开启交互</p>
+<p>我们需要使用 docker exec 进入到容器</p>
+<p>docker exec -it 1e592c76445b /bin/bash</p>
+<h3 id="1-启动redis"><a href="#1-启动redis" class="headerlink" title="1.启动redis"></a>1.启动redis</h3><h5 id="启动多个redis"><a href="#启动多个redis" class="headerlink" title="启动多个redis"></a>启动多个redis</h5><p>-p   端口号的映射    宿主机端口:容器端口</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker  <span class="keyword">run</span><span class="bash"> --name redis1 -d   -p 6379:6379 redis   </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 还可以继续开 开多个</span></span><br><span class="line">docker  <span class="keyword">run</span><span class="bash"> --name redis2 -d   -p 6378:6379 redis </span></span><br></pre></td></tr></table></figure>
+
+<h5 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h host -p port -a password</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-开启mysql"><a href="#2-开启mysql" class="headerlink" title="2 .开启mysql"></a>2 .开启mysql</h3><h4 id="1-开启服务"><a href="#1-开启服务" class="headerlink" title="1.开启服务"></a>1.开启服务</h4><p>和普通开发服务一样，但也有特定， 需要知道 账号 密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mysql56 -d  -p 3305:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<p>进入到mysql容器服务里</p>
+<p>docker  exec 进入到mysql容器</p>
+<p>然后可以操作数据库，进行数据库的增删改查操作</p>
+<h4 id="2-连接mysql"><a href="#2-连接mysql" class="headerlink" title="2.连接mysql"></a>2.连接mysql</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h host -P port -u username -p</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>连接错误问题：</li>
+</ul>
+<p>本地客户端连接远程docker启动的mysql8的容器会报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSL connection error: unknown error number</span><br></pre></td></tr></table></figure>
+
+<p>通过一个帖子 可以配置 skip ssl  来跳过ssl</p>
+<p>本地客户端在连接远程docker启动的mysql5.6容器不会报错</p>
+<p>本地客户端在连接远程mysql8服务(直接在远程服务器上安装的) 也不会报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"># 查看mysql5.6的ssl相关配置</span><br><span class="line"></span><br><span class="line">mysql&gt; SHOW VARIABLES LIKE &#x27;%ssl%&#x27;;</span><br><span class="line">+---------------+----------+</span><br><span class="line">| Variable_name | Value    |</span><br><span class="line">+---------------+----------+</span><br><span class="line">| have_openssl  | DISABLED |</span><br><span class="line">| have_ssl      | DISABLED |</span><br><span class="line">| ssl_ca        |          |</span><br><span class="line">| ssl_capath    |          |</span><br><span class="line">| ssl_cert      |          |</span><br><span class="line">| ssl_cipher    |          |</span><br><span class="line">| ssl_crl       |          |</span><br><span class="line">| ssl_crlpath   |          |</span><br><span class="line">| ssl_key       |          |</span><br><span class="line">+---------------+----------+</span><br><span class="line">9 rows in set (0.03 sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查看 mysql8的ssl相关配置</span><br><span class="line"></span><br><span class="line">mysql&gt; SHOW VARIABLES LIKE &#x27;%ssl%&#x27;;</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">| Variable_name      | Value           |</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">| admin_ssl_ca       |                 |</span><br><span class="line">| admin_ssl_capath   |                 |</span><br><span class="line">| admin_ssl_cert     |                 |</span><br><span class="line">| admin_ssl_cipher   |                 |</span><br><span class="line">| admin_ssl_crl      |                 |</span><br><span class="line">| admin_ssl_crlpath  |                 |</span><br><span class="line">| admin_ssl_key      |                 |</span><br><span class="line">| have_openssl       | YES             |</span><br><span class="line">| have_ssl           | YES             |</span><br><span class="line">| mysqlx_ssl_ca      |                 |</span><br><span class="line">| mysqlx_ssl_capath  |                 |</span><br><span class="line">| mysqlx_ssl_cert    |                 |</span><br><span class="line">| mysqlx_ssl_cipher  |                 |</span><br><span class="line">| mysqlx_ssl_crl     |                 |</span><br><span class="line">| mysqlx_ssl_crlpath |                 |</span><br><span class="line">| mysqlx_ssl_key     |                 |</span><br><span class="line">| ssl_ca             | ca.pem          |</span><br><span class="line">| ssl_capath         |                 |</span><br><span class="line">| ssl_cert           | server-cert.pem |</span><br><span class="line">| ssl_cipher         |                 |</span><br><span class="line">| ssl_crl            |                 |</span><br><span class="line">| ssl_crlpath        |                 |</span><br><span class="line">| ssl_fips_mode      | OFF             |</span><br><span class="line">| ssl_key            | server-key.pem  |</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">24 rows in set (0.11 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看到have_ssl的值为YES，表示已开启SSL。（have_openssl表示是否支持SSL）</p>
+<p>使用ssl证书，就可以不用账号 密码来登录。</p>
+<p>have_ssl YES 表示是启动ssl的，可以在/etc/my.cnf文件文件中的 [mysqld] 段添加 skip-ssl 表示跳过ssl。</p>
+<p>本地连接和远程连接是不一样的，本地连接都不会启用SSL连接，只有远程用户连接时会启动。</p>
+<p>mysql5.7 mysql8 都默认开启了ssl。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/my.cnf</span><br><span class="line">[client]</span><br><span class="line">port = 3306</span><br><span class="line">socket=/data/mysql/mysql.sock</span><br><span class="line">[mysqld]</span><br><span class="line">port=3306</span><br><span class="line">basedir=/opt/mysql</span><br><span class="line">datadir=/data/mysql</span><br><span class="line">socket=/data/mysql/mysql.sock</span><br><span class="line">symbolic-links=0</span><br><span class="line">user=mysql</span><br><span class="line">pid-file=/data/mysql/mysqld.pid</span><br><span class="line">log-error=/data/logs/mysql/mysqld.log</span><br><span class="line">skip-ssl             # 跳过ssl</span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">log-error=/data/logs/mysql/mysqld.log</span><br><span class="line">pid-file=/data/mysql/mysqld.pid</span><br></pre></td></tr></table></figure>
+
+ 
       <!-- reward -->
       
     </div>
@@ -130,7 +204,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/about/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -139,8 +213,28 @@
   </div>
 
    
-  
+  <nav class="article-nav">
     
+      <a href="/tianzengde-io/2021/05/17/Dockerfile%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Dockerfile的使用
+          
+        </div>
+      </a>
+    
+    
+      <a href="/tianzengde-io/2021/05/17/Docker%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Docker基础</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
 </article>
 
 </section>
@@ -293,6 +387,22 @@
 <script src="/tianzengde-io/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/tianzengde-io/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
