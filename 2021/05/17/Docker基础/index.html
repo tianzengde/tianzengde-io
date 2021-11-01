@@ -77,7 +77,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">935</span>
+            <span class="post-count">1.5k</span>
         </span>
     </span>
 
@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
@@ -102,6 +102,21 @@
     <div class="article-entry" itemprop="articleBody">
        
   <p>[toc]</p>
+<h2 id="1、Docker介绍"><a href="#1、Docker介绍" class="headerlink" title="1、Docker介绍"></a>1、Docker介绍</h2><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%95%9C%E5%83%8F/1574">镜像</a>中，然后发布到任何流行的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux">Linux</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows/165458">Windows</a> 机器上，也可以实现<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E5%8C%96/547949">虚拟化</a>。容器是完全使用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%B2%99%E7%AE%B1/393318">沙箱</a>机制，相互之间不会有任何接口。</p>
+<p>一个完整的Docker有以下几个部分组成：</p>
+<ol>
+<li>DockerClient客户端    –客户端</li>
+<li>Docker Daemon守护进程  –服务端</li>
+<li>Docker Image镜像</li>
+<li>DockerContainer容器 </li>
+</ol>
+<h2 id="Docker架构"><a href="#Docker架构" class="headerlink" title="Docker架构"></a>Docker架构</h2><p>Docker使用客户端-服务器架构。Docker<em>客户端</em>与Docker<em>守护进程</em>进行对话，该<em>守护进程</em>完成了构建，运行和分发Docker容器的繁重工作。Docker客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将Docker客户端连接到远程Docker守护程序。Docker客户端和守护程序在UNIX套接字或网络接口上使用REST API进行通信。另一个Docker客户端是Docker Compose，它使您可以处理由一组容器组成的应用程序。</p>
+<p><img src="https://docs.docker.com/engine/images/architecture.svg" alt="Docker架构图"></p>
+<h3 id="Docker守护程序"><a href="#Docker守护程序" class="headerlink" title="Docker守护程序"></a>Docker守护程序</h3><p>Docker守护程序（<code>dockerd</code>）侦听Docker API请求并管理Docker对象，例如图像，容器，网络和卷。守护程序还可以与其他守护程序通信以管理Docker服务。</p>
+<h3 id="Docker客户端"><a href="#Docker客户端" class="headerlink" title="Docker客户端"></a>Docker客户端</h3><p>Docker客户端（<code>docker</code>）是许多Docker用户与Docker交互的主要方式。当您使用诸如之类的命令时<code>docker run</code>，客户端会将这些命令发送到<code>dockerd</code>，以执行这些命令。该<code>docker</code>命令使用Docker API。Docker客户端可以与多个守护程序通信。</p>
+<h3 id="Docker注册表"><a href="#Docker注册表" class="headerlink" title="Docker注册表"></a>Docker注册表</h3><p>Docker<em>注册表</em>存储Docker映像。Docker Hub是任何人都可以使用的公共注册表，并且默认情况下，Docker已配置为在Docker Hub上查找映像。您甚至可以运行自己的私人注册表。</p>
+<p>使用<code>docker pull</code>或<code>docker run</code>命令时，将从配置的注册表中提取所需的图像。使用该<code>docker push</code>命令时，会将映像推送到已配置的注册表。</p>
+<h3 id="Docker对象"><a href="#Docker对象" class="headerlink" title="Docker对象"></a>Docker对象</h3><p>使用Docker时，您正在创建和使用映像，容器，网络，卷，插件和其他对象。本节是其中一些对象的简要概述。</p>
 <h2 id="一、Docker安装"><a href="#一、Docker安装" class="headerlink" title="一、Docker安装"></a>一、Docker安装</h2><h3 id="CentOS安装"><a href="#CentOS安装" class="headerlink" title="CentOS安装"></a>CentOS安装</h3><p>1.安装yum工具命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></table></figure>
 

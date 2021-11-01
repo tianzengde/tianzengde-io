@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>categories |  梦里花落的博客</title>
+      <title>git常见操作 |  梦里花落的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -45,12 +45,225 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-git常见操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  git常见操作
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/tianzengde-io/2021/11/01/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-11-01T14:23:52.529Z" itemprop="datePublished">2021-11-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/tianzengde-io/categories/git%E7%9B%B8%E5%85%B3/">git相关</a>
+  </div>
   
-    <h1 class="page-type-title">分类</h1>
-    <div class="categories-box">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tianzengde-io/categories/Docker%E6%93%8D%E4%BD%9C/">Docker操作</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/">Linux操作</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/tianzengde-io/categories/git%E7%9B%B8%E5%85%B3/">git相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/tianzengde-io/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">1</span></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">548</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="一、Git介绍"><a href="#一、Git介绍" class="headerlink" title="一、Git介绍"></a>一、Git介绍</h2><h3 id="1、git说明"><a href="#1、git说明" class="headerlink" title="1、git说明"></a>1、git说明</h3><p>git是一个分布式的版本控制系统/工具。</p>
+<p>其他版本控制工具:SVN、CVS</p>
+<p>数据存储上：直接快照，不是差异化比较</p>
+<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git 目录。</p>
+<p>文件在工作区被修改，然后被添加到暂存区 ，从暂存区 提交到 git仓库</p>
+<p>基本的 Git 工作流程如下：</p>
+<ol>
+<li>在工作区中修改文件。</li>
+<li>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</li>
+<li>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</li>
+</ol>
+<h3 id="2、git-基本命令"><a href="#2、git-基本命令" class="headerlink" title="2、git 基本命令"></a>2、git 基本命令</h3><ul>
+<li>初始化</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 初始化仓库</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 添加文件到暂存区</span><br><span class="line">git add</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>提交仓库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 提交更新 找到暂存区的文件，将快照存储到git仓库</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3、远程仓库命令"><a href="#3、远程仓库命令" class="headerlink" title="3、远程仓库命令"></a>3、远程仓库命令</h3><ul>
+<li>克隆</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  地址</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>拉取</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>推送 </li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、分支"><a href="#二、分支" class="headerlink" title="二、分支"></a>二、分支</h2><p>1、创建分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch  分支名 </span><br></pre></td></tr></table></figure>
+
+<p>2、切换分支 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名</span><br></pre></td></tr></table></figure>
+
+<p>3、查看分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>4、删除分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名</span><br></pre></td></tr></table></figure>
+
+<p>5、merge合并分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+
+<p>我们先切换到 主分支上 然后在主分支上 执行 合并 dev分支</p>
+<h2 id="三、git其他操作"><a href="#三、git其他操作" class="headerlink" title="三、git其他操作"></a>三、git其他操作</h2><p>1、查看日志</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">E:\workspace2021\shixun01\resp_2005A&gt;git log</span><br><span class="line">commit 2a321ed5c76d3721d10ccbcd5aa3aed07ea4cdfa (HEAD -&gt; master)</span><br><span class="line">Author: Lily &lt;johndoe@example.com&gt;</span><br><span class="line">Date:   Wed Apr 21 10:47:12 2021 +0800</span><br><span class="line"></span><br><span class="line">    add gitignore</span><br><span class="line"></span><br><span class="line">commit 299d6b8d28ebe1d0d4c896ffdf550fa572f7730d</span><br><span class="line">Author: Lily &lt;johndoe@example.com&gt;</span><br><span class="line">Date:   Wed Apr 21 10:37:20 2021 +0800</span><br><span class="line"></span><br><span class="line">    &lt;E5&gt;&lt;88&gt;&lt;9D&gt;&lt;E5&gt;&lt;A7&gt;&lt;8B&gt;&lt;E5&gt;&lt;8C&gt;&lt;96&gt;&lt;E9&gt;&lt;A1&gt;&lt;B9&gt;&lt;E7&gt;AE&gt;</span><br></pre></td></tr></table></figure>
+
+<p>每一个请求 都有一个唯一的hash值</p>
+<p>2、回滚</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.git reset --hard HEAD^，回滚到上个版本</span><br><span class="line"></span><br><span class="line">2.git reset --hard HEAD^~2，回滚到前两个版本</span><br><span class="line"></span><br><span class="line">3.git reset --hard xxx(版本号或版本号前几位)，回滚到指定版本号，如果是版本号前几位，git会自动寻找匹配的版本号</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard  299d6b8d28ebe1d0d4c896ffdf550fa572f7730d</span><br></pre></td></tr></table></figure>
+
+<p>会回滚到 指定的提交版本上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">查看操作日志：git reflog</span><br><span class="line"></span><br><span class="line">版本号 操作记录</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/11/01/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/tianzengde-io/2021/05/17/Dockerfile%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Dockerfile的使用</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -201,6 +414,22 @@
 <script src="/tianzengde-io/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/tianzengde-io/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
