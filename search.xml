@@ -34,6 +34,26 @@
       </categories>
   </entry>
   <entry>
+    <title>CentOS7常用命令</title>
+    <url>/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="CentOS常用命令"><a href="#CentOS常用命令" class="headerlink" title="CentOS常用命令"></a>CentOS常用命令</h1><hr>
+<p>[toc]</p>
+<h3 id="端口相关"><a href="#端口相关" class="headerlink" title="端口相关"></a>端口相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看监听(Listen)的端口</span></span><br><span class="line">netstat -lntp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看所有建立的TCP连接</span></span><br><span class="line">netstat -antp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">lsof -i tcp:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">netstat -lnp|grep <span class="number">8000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看正在全部进程</span></span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定的进程</span></span><br><span class="line">ps aux | grep 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死某个进程</span></span><br><span class="line">kill 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死一类进程</span></span><br><span class="line">killall 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 踢出某个终端  -9 可强制终止</span></span><br><span class="line">pkill -<span class="number">9</span> 程序名 </span><br></pre></td></tr></table></figure>
+
+<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">systemctl status xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">systemctl stop  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载服务</span></span><br><span class="line">systemctl reload xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务开机启动</span></span><br><span class="line">systemctl enable xxx   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设备服务禁止开机启动</span></span><br><span class="line">systemctl disable xxx  </span><br></pre></td></tr></table></figure>
+
+<h3 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#启动网络服务</span></span><br><span class="line">systemctl start network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#停止网络服务</span></span><br><span class="line">systemctl stop network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#重启网络服务</span></span><br><span class="line">systemctl restart network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看网络服务状态</span></span><br><span class="line">systemctl status network.serivce</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出虚拟环境列表</span></span><br><span class="line">lsvirtualenv</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新虚拟环境</span></span><br><span class="line">mkvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动/ 切换虚拟环境</span></span><br><span class="line">workon [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除虚拟环境</span></span><br><span class="line">rmvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#离开虚拟环境</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux操作</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CentOS7软件安装</title>
     <url>/tianzengde-io/2021/05/15/CentSO%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="CentSO软件安装"><a href="#CentSO软件安装" class="headerlink" title="CentSO软件安装"></a>CentSO软件安装</h1> <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">在Linux上安装软件</span><br><span class="line">	<span class="number">1.</span>一种使用工具累进行 包安装</span><br><span class="line">    <span class="number">2.</span>通过下载源码进行编译安装</span><br></pre></td></tr></table></figure>
@@ -111,23 +131,50 @@
       </categories>
   </entry>
   <entry>
-    <title>CentOS7常用命令</title>
-    <url>/tianzengde-io/2021/05/15/CentOS%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="CentOS常用命令"><a href="#CentOS常用命令" class="headerlink" title="CentOS常用命令"></a>CentOS常用命令</h1><hr>
-<p>[toc]</p>
-<h3 id="端口相关"><a href="#端口相关" class="headerlink" title="端口相关"></a>端口相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看监听(Listen)的端口</span></span><br><span class="line">netstat -lntp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看所有建立的TCP连接</span></span><br><span class="line">netstat -antp</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">lsof -i tcp:<span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看某个端口被谁使用</span></span><br><span class="line">netstat -lnp|grep <span class="number">8000</span></span><br></pre></td></tr></table></figure>
+    <title>Docker启动服务容器</title>
+    <url>/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="启动服务容器"><a href="#启动服务容器" class="headerlink" title="启动服务容器"></a>启动服务容器</h1><p>如果想要容器 长时间运行 作为服务，需要加-d 后台运行 </p>
+<p>-d执行的容器 不会直接开启交互</p>
+<p>我们需要使用 docker exec 进入到容器</p>
+<p>docker exec -it 1e592c76445b /bin/bash</p>
+<h3 id="1-启动redis"><a href="#1-启动redis" class="headerlink" title="1.启动redis"></a>1.启动redis</h3><h5 id="启动多个redis"><a href="#启动多个redis" class="headerlink" title="启动多个redis"></a>启动多个redis</h5><p>-p   端口号的映射    宿主机端口:容器端口</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">docker  <span class="keyword">run</span><span class="bash"> --name redis1 -d   -p 6379:6379 redis   </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 还可以继续开 开多个</span></span><br><span class="line">docker  <span class="keyword">run</span><span class="bash"> --name redis2 -d   -p 6378:6379 redis </span></span><br></pre></td></tr></table></figure>
 
-<h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看正在全部进程</span></span><br><span class="line">ps aux</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定的进程</span></span><br><span class="line">ps aux | grep 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死某个进程</span></span><br><span class="line">kill 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死一类进程</span></span><br><span class="line">killall 程序名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 踢出某个终端  -9 可强制终止</span></span><br><span class="line">pkill -<span class="number">9</span> 程序名 </span><br></pre></td></tr></table></figure>
+<h5 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli -h host -p port -a password</span><br></pre></td></tr></table></figure>
 
-<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">systemctl status xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">systemctl stop  xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载服务</span></span><br><span class="line">systemctl reload xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务开机启动</span></span><br><span class="line">systemctl enable xxx   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设备服务禁止开机启动</span></span><br><span class="line">systemctl disable xxx  </span><br></pre></td></tr></table></figure>
 
-<h3 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#启动网络服务</span></span><br><span class="line">systemctl start network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#停止网络服务</span></span><br><span class="line">systemctl stop network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#重启网络服务</span></span><br><span class="line">systemctl restart network.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看网络服务状态</span></span><br><span class="line">systemctl status network.serivce</span><br></pre></td></tr></table></figure>
 
-<h3 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出虚拟环境列表</span></span><br><span class="line">lsvirtualenv</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建新虚拟环境</span></span><br><span class="line">mkvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动/ 切换虚拟环境</span></span><br><span class="line">workon [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除虚拟环境</span></span><br><span class="line">rmvirtualenv [name]</span><br><span class="line"></span><br><span class="line"><span class="comment">#离开虚拟环境</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+<h3 id="2-开启mysql"><a href="#2-开启mysql" class="headerlink" title="2 .开启mysql"></a>2 .开启mysql</h3><h4 id="1-开启服务"><a href="#1-开启服务" class="headerlink" title="1.开启服务"></a>1.开启服务</h4><p>和普通开发服务一样，但也有特定， 需要知道 账号 密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --name mysql56 -d  -p 3305:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<p>进入到mysql容器服务里</p>
+<p>docker  exec 进入到mysql容器</p>
+<p>然后可以操作数据库，进行数据库的增删改查操作</p>
+<h4 id="2-连接mysql"><a href="#2-连接mysql" class="headerlink" title="2.连接mysql"></a>2.连接mysql</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -h host -P port -u username -p</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>连接错误问题：</li>
+</ul>
+<p>本地客户端连接远程docker启动的mysql8的容器会报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSL connection error: unknown error number</span><br></pre></td></tr></table></figure>
+
+<p>通过一个帖子 可以配置 skip ssl  来跳过ssl</p>
+<p>本地客户端在连接远程docker启动的mysql5.6容器不会报错</p>
+<p>本地客户端在连接远程mysql8服务(直接在远程服务器上安装的) 也不会报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看mysql5.6的ssl相关配置</span><br><span class="line"></span><br><span class="line">mysql&gt; SHOW VARIABLES LIKE &#x27;%ssl%&#x27;;</span><br><span class="line">+---------------+----------+</span><br><span class="line">| Variable_name | Value    |</span><br><span class="line">+---------------+----------+</span><br><span class="line">| have_openssl  | DISABLED |</span><br><span class="line">| have_ssl      | DISABLED |</span><br><span class="line">| ssl_ca        |          |</span><br><span class="line">| ssl_capath    |          |</span><br><span class="line">| ssl_cert      |          |</span><br><span class="line">| ssl_cipher    |          |</span><br><span class="line">| ssl_crl       |          |</span><br><span class="line">| ssl_crlpath   |          |</span><br><span class="line">| ssl_key       |          |</span><br><span class="line">+---------------+----------+</span><br><span class="line">9 rows in set (0.03 sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查看 mysql8的ssl相关配置</span><br><span class="line"></span><br><span class="line">mysql&gt; SHOW VARIABLES LIKE &#x27;%ssl%&#x27;;</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">| Variable_name      | Value           |</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">| admin_ssl_ca       |                 |</span><br><span class="line">| admin_ssl_capath   |                 |</span><br><span class="line">| admin_ssl_cert     |                 |</span><br><span class="line">| admin_ssl_cipher   |                 |</span><br><span class="line">| admin_ssl_crl      |                 |</span><br><span class="line">| admin_ssl_crlpath  |                 |</span><br><span class="line">| admin_ssl_key      |                 |</span><br><span class="line">| have_openssl       | YES             |</span><br><span class="line">| have_ssl           | YES             |</span><br><span class="line">| mysqlx_ssl_ca      |                 |</span><br><span class="line">| mysqlx_ssl_capath  |                 |</span><br><span class="line">| mysqlx_ssl_cert    |                 |</span><br><span class="line">| mysqlx_ssl_cipher  |                 |</span><br><span class="line">| mysqlx_ssl_crl     |                 |</span><br><span class="line">| mysqlx_ssl_crlpath |                 |</span><br><span class="line">| mysqlx_ssl_key     |                 |</span><br><span class="line">| ssl_ca             | ca.pem          |</span><br><span class="line">| ssl_capath         |                 |</span><br><span class="line">| ssl_cert           | server-cert.pem |</span><br><span class="line">| ssl_cipher         |                 |</span><br><span class="line">| ssl_crl            |                 |</span><br><span class="line">| ssl_crlpath        |                 |</span><br><span class="line">| ssl_fips_mode      | OFF             |</span><br><span class="line">| ssl_key            | server-key.pem  |</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">24 rows in set (0.11 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看到have_ssl的值为YES，表示已开启SSL。（have_openssl表示是否支持SSL）</p>
+<p>使用ssl证书，就可以不用账号 密码来登录。</p>
+<p>have_ssl YES 表示是启动ssl的，可以在/etc/my.cnf文件文件中的 [mysqld] 段添加 skip-ssl 表示跳过ssl。</p>
+<p>本地连接和远程连接是不一样的，本地连接都不会启用SSL连接，只有远程用户连接时会启动。</p>
+<p>mysql5.7 mysql8 都默认开启了ssl。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/my.cnf</span><br><span class="line">[client]</span><br><span class="line">port = 3306</span><br><span class="line">socket=/data/mysql/mysql.sock</span><br><span class="line">[mysqld]</span><br><span class="line">port=3306</span><br><span class="line">basedir=/opt/mysql</span><br><span class="line">datadir=/data/mysql</span><br><span class="line">socket=/data/mysql/mysql.sock</span><br><span class="line">symbolic-links=0</span><br><span class="line">user=mysql</span><br><span class="line">pid-file=/data/mysql/mysqld.pid</span><br><span class="line">log-error=/data/logs/mysql/mysqld.log</span><br><span class="line">skip-ssl             # 跳过ssl</span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">log-error=/data/logs/mysql/mysqld.log</span><br><span class="line">pid-file=/data/mysql/mysqld.pid</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>Linux操作</category>
+        <category>Docker操作</category>
       </categories>
   </entry>
   <entry>
@@ -225,6 +272,27 @@
       </categories>
   </entry>
   <entry>
+    <title>git命令总结</title>
+    <url>/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="Git基本配置"><a href="#Git基本配置" class="headerlink" title="Git基本配置"></a>Git基本配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --list       # 查看git基本配置</span><br><span class="line">git config --system -l  # 查看git系统配置</span><br><span class="line">git config --global -l  # 查看git用户配置</span><br></pre></td></tr></table></figure>
+<h2 id="设置用户配置"><a href="#设置用户配置" class="headerlink" title="设置用户配置"></a>设置用户配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --system user.name &quot;用户名&quot;</span><br><span class="line">git config --system user.email 邮箱</span><br><span class="line"># 使用git时必须配置此项</span><br></pre></td></tr></table></figure>
+<h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h2 id="拉取远程仓库或分支"><a href="#拉取远程仓库或分支" class="headerlink" title="拉取远程仓库或分支"></a>拉取远程仓库或分支</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone &lt;url&gt;                        # 克隆一个仓库到本地</span><br><span class="line">git clone -b &lt;分支名&gt; &lt;远程仓库地址&gt;   # 克隆远程仓库指定分支到本地</span><br><span class="line">git pull                              # 拉取主分支最新更改</span><br><span class="line">git pull origin &lt;分支名&gt;              # 拉取某个分支最新更改</span><br></pre></td></tr></table></figure>
+<h2 id="添加文件到暂存区"><a href="#添加文件到暂存区" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add &lt;file&gt;  # 添加指定文件到git的暂存区</span><br><span class="line">git add .       # 添加全部文件到git的暂存区</span><br></pre></td></tr></table></figure>
+<h2 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status      # 可以查看在你上次提交之后是否有对文件进行再次修改</span><br></pre></td></tr></table></figure>
+<h2 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;提交的说明&quot;  # 把暂存区的文件提价到当前分支</span><br><span class="line">git commit -a               # 参数设置修改文件后不需要执行git add 命令，直接来提交</span><br><span class="line">git commit --amend          # 修改最近一次的提交说明</span><br></pre></td></tr></table></figure>
+<h2 id="推送文件到远程仓库"><a href="#推送文件到远程仓库" class="headerlink" title="推送文件到远程仓库"></a>推送文件到远程仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push</span><br><span class="line">git push origin master      # 将本地的master分支推送到origin主机的master分支</span><br><span class="line">git push -f origin master   # 版本不同时，强行推送到远程</span><br></pre></td></tr></table></figure>
+<h2 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git blame &lt;file&gt;        # 查看指定文件的修改记录</span><br></pre></td></tr></table></figure>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset --hard        # 撤销工作区和暂存区的所有修改</span><br><span class="line">git reset --hard^       # 回退到上一个版本</span><br><span class="line">git reset --hard^^      # 回退到上上一个版本</span><br><span class="line">git reset &lt;版本号&gt;      # 回退到指定的版本</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除-1"><a href="#文件删除-1" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
+<h2 id="对远程仓库的操作"><a href="#对远程仓库的操作" class="headerlink" title="对远程仓库的操作"></a>对远程仓库的操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote              # 列出已经存在的远程分支</span><br><span class="line">git remote -v           # 列出详细信息,显示对应的克隆地址</span><br><span class="line">git remote add url      # 添加一个远程仓库</span><br><span class="line">git remote rm name      # 删除远程仓库</span><br><span class="line">git remote set-url origin [url]         # 修改远程仓库地址</span><br><span class="line">git remote rename old_name new_name     # 修改仓库名</span><br></pre></td></tr></table></figure>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch              # 查看当前分支并列出所有分支</span><br><span class="line">git branch &lt;name&gt;       # 创建一个新的分支</span><br><span class="line">git branch -d &lt;name&gt;    # 删除某个分支</span><br><span class="line">git checkout &lt;name&gt;     # 切换到某个分支</span><br><span class="line">git checkout -b &lt;name&gt;  # 基于当前分支，创建并切换的到新分支</span><br><span class="line">git marge &lt;name&gt;        # 把某个分支合并到当前分支</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>git常见操作</title>
     <url>/tianzengde-io/2021/11/01/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="一、Git介绍"><a href="#一、Git介绍" class="headerlink" title="一、Git介绍"></a>一、Git介绍</h2><h3 id="1、git说明"><a href="#1、git说明" class="headerlink" title="1、git说明"></a>1、git说明</h3><p>git是一个分布式的版本控制系统/工具。</p>
@@ -305,53 +373,6 @@
 ]]></content>
       <categories>
         <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Docker启动服务容器</title>
-    <url>/tianzengde-io/2021/05/17/Docker%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="启动服务容器"><a href="#启动服务容器" class="headerlink" title="启动服务容器"></a>启动服务容器</h1><p>如果想要容器 长时间运行 作为服务，需要加-d 后台运行 </p>
-<p>-d执行的容器 不会直接开启交互</p>
-<p>我们需要使用 docker exec 进入到容器</p>
-<p>docker exec -it 1e592c76445b /bin/bash</p>
-<h3 id="1-启动redis"><a href="#1-启动redis" class="headerlink" title="1.启动redis"></a>1.启动redis</h3><h5 id="启动多个redis"><a href="#启动多个redis" class="headerlink" title="启动多个redis"></a>启动多个redis</h5><p>-p   端口号的映射    宿主机端口:容器端口</p>
-<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">docker  <span class="keyword">run</span><span class="bash"> --name redis1 -d   -p 6379:6379 redis   </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 还可以继续开 开多个</span></span><br><span class="line">docker  <span class="keyword">run</span><span class="bash"> --name redis2 -d   -p 6378:6379 redis </span></span><br></pre></td></tr></table></figure>
-
-<h5 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">redis-cli -h host -p port -a password</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-开启mysql"><a href="#2-开启mysql" class="headerlink" title="2 .开启mysql"></a>2 .开启mysql</h3><h4 id="1-开启服务"><a href="#1-开启服务" class="headerlink" title="1.开启服务"></a>1.开启服务</h4><p>和普通开发服务一样，但也有特定， 需要知道 账号 密码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --name mysql56 -d  -p 3305:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:5.6</span><br></pre></td></tr></table></figure>
-
-<p>进入到mysql容器服务里</p>
-<p>docker  exec 进入到mysql容器</p>
-<p>然后可以操作数据库，进行数据库的增删改查操作</p>
-<h4 id="2-连接mysql"><a href="#2-连接mysql" class="headerlink" title="2.连接mysql"></a>2.连接mysql</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -h host -P port -u username -p</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>连接错误问题：</li>
-</ul>
-<p>本地客户端连接远程docker启动的mysql8的容器会报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSL connection error: unknown error number</span><br></pre></td></tr></table></figure>
-
-<p>通过一个帖子 可以配置 skip ssl  来跳过ssl</p>
-<p>本地客户端在连接远程docker启动的mysql5.6容器不会报错</p>
-<p>本地客户端在连接远程mysql8服务(直接在远程服务器上安装的) 也不会报错</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看mysql5.6的ssl相关配置</span><br><span class="line"></span><br><span class="line">mysql&gt; SHOW VARIABLES LIKE &#x27;%ssl%&#x27;;</span><br><span class="line">+---------------+----------+</span><br><span class="line">| Variable_name | Value    |</span><br><span class="line">+---------------+----------+</span><br><span class="line">| have_openssl  | DISABLED |</span><br><span class="line">| have_ssl      | DISABLED |</span><br><span class="line">| ssl_ca        |          |</span><br><span class="line">| ssl_capath    |          |</span><br><span class="line">| ssl_cert      |          |</span><br><span class="line">| ssl_cipher    |          |</span><br><span class="line">| ssl_crl       |          |</span><br><span class="line">| ssl_crlpath   |          |</span><br><span class="line">| ssl_key       |          |</span><br><span class="line">+---------------+----------+</span><br><span class="line">9 rows in set (0.03 sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 查看 mysql8的ssl相关配置</span><br><span class="line"></span><br><span class="line">mysql&gt; SHOW VARIABLES LIKE &#x27;%ssl%&#x27;;</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">| Variable_name      | Value           |</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">| admin_ssl_ca       |                 |</span><br><span class="line">| admin_ssl_capath   |                 |</span><br><span class="line">| admin_ssl_cert     |                 |</span><br><span class="line">| admin_ssl_cipher   |                 |</span><br><span class="line">| admin_ssl_crl      |                 |</span><br><span class="line">| admin_ssl_crlpath  |                 |</span><br><span class="line">| admin_ssl_key      |                 |</span><br><span class="line">| have_openssl       | YES             |</span><br><span class="line">| have_ssl           | YES             |</span><br><span class="line">| mysqlx_ssl_ca      |                 |</span><br><span class="line">| mysqlx_ssl_capath  |                 |</span><br><span class="line">| mysqlx_ssl_cert    |                 |</span><br><span class="line">| mysqlx_ssl_cipher  |                 |</span><br><span class="line">| mysqlx_ssl_crl     |                 |</span><br><span class="line">| mysqlx_ssl_crlpath |                 |</span><br><span class="line">| mysqlx_ssl_key     |                 |</span><br><span class="line">| ssl_ca             | ca.pem          |</span><br><span class="line">| ssl_capath         |                 |</span><br><span class="line">| ssl_cert           | server-cert.pem |</span><br><span class="line">| ssl_cipher         |                 |</span><br><span class="line">| ssl_crl            |                 |</span><br><span class="line">| ssl_crlpath        |                 |</span><br><span class="line">| ssl_fips_mode      | OFF             |</span><br><span class="line">| ssl_key            | server-key.pem  |</span><br><span class="line">+--------------------+-----------------+</span><br><span class="line">24 rows in set (0.11 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>看到have_ssl的值为YES，表示已开启SSL。（have_openssl表示是否支持SSL）</p>
-<p>使用ssl证书，就可以不用账号 密码来登录。</p>
-<p>have_ssl YES 表示是启动ssl的，可以在/etc/my.cnf文件文件中的 [mysqld] 段添加 skip-ssl 表示跳过ssl。</p>
-<p>本地连接和远程连接是不一样的，本地连接都不会启用SSL连接，只有远程用户连接时会启动。</p>
-<p>mysql5.7 mysql8 都默认开启了ssl。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/my.cnf</span><br><span class="line">[client]</span><br><span class="line">port = 3306</span><br><span class="line">socket=/data/mysql/mysql.sock</span><br><span class="line">[mysqld]</span><br><span class="line">port=3306</span><br><span class="line">basedir=/opt/mysql</span><br><span class="line">datadir=/data/mysql</span><br><span class="line">socket=/data/mysql/mysql.sock</span><br><span class="line">symbolic-links=0</span><br><span class="line">user=mysql</span><br><span class="line">pid-file=/data/mysql/mysqld.pid</span><br><span class="line">log-error=/data/logs/mysql/mysqld.log</span><br><span class="line">skip-ssl             # 跳过ssl</span><br><span class="line"></span><br><span class="line">[mysqld_safe]</span><br><span class="line">log-error=/data/logs/mysql/mysqld.log</span><br><span class="line">pid-file=/data/mysql/mysqld.pid</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Docker操作</category>
       </categories>
   </entry>
   <entry>
@@ -979,26 +1000,6 @@
 ]]></content>
       <categories>
         <category>笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>git命令总结</title>
-    <url>/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="Git基本配置"><a href="#Git基本配置" class="headerlink" title="Git基本配置"></a>Git基本配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --list       # 查看git基本配置</span><br><span class="line">git config --system -l  # 查看git系统配置</span><br><span class="line">git config --global -l  # 查看git用户配置</span><br></pre></td></tr></table></figure>
-<h2 id="设置用户配置"><a href="#设置用户配置" class="headerlink" title="设置用户配置"></a>设置用户配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --system user.name &quot;用户名&quot;</span><br><span class="line">git config --system user.email 邮箱</span><br><span class="line"># 使用git时必须配置此项</span><br></pre></td></tr></table></figure>
-<h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h2 id="添加文件到暂存区"><a href="#添加文件到暂存区" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add &lt;file&gt;  # 添加指定文件到git的暂存区</span><br><span class="line">git add .       # 添加全部文件到git的暂存区</span><br></pre></td></tr></table></figure>
-<h2 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status      # 可以查看在你上次提交之后是否有对文件进行再次修改</span><br></pre></td></tr></table></figure>
-<h2 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;提交的说明&quot;  # 把暂存区的文件提价到当前分支</span><br><span class="line">git commit -a               # 参数设置修改文件后不需要执行git add 命令，直接来提交</span><br><span class="line">git commit --amend          # 修改最近一次的提交说明</span><br></pre></td></tr></table></figure>
-<h2 id="推送文件到远程仓库"><a href="#推送文件到远程仓库" class="headerlink" title="推送文件到远程仓库"></a>推送文件到远程仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push</span><br><span class="line">git push origin master      # 将本地的master分支推送到origin主机的master分支</span><br><span class="line">git push -f origin master   # 版本不同时，强行推送到远程</span><br></pre></td></tr></table></figure>
-<h2 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git blame &lt;file&gt;        # 查看指定文件的修改记录</span><br></pre></td></tr></table></figure>
-<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset --hard        # 撤销工作区和暂存区的所有修改</span><br><span class="line">git reset --hard^       # 回退到上一个版本</span><br><span class="line">git reset --hard^^      # 回退到上上一个版本</span><br><span class="line">git reset &lt;版本号&gt;      # 回退到指定的版本</span><br></pre></td></tr></table></figure>
-<h2 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
-<h2 id="文件删除-1"><a href="#文件删除-1" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
-<h2 id="对远程仓库的操作"><a href="#对远程仓库的操作" class="headerlink" title="对远程仓库的操作"></a>对远程仓库的操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote              # 列出已经存在的远程分支</span><br><span class="line">git remote -v           # 列出详细信息,显示对应的克隆地址</span><br><span class="line">git remote add url      # 添加一个远程仓库</span><br><span class="line">git remote rm name      # 删除远程仓库</span><br><span class="line">git remote set-url origin [url]         # 修改远程仓库地址</span><br><span class="line">git remote rename old_name new_name     # 修改仓库名</span><br></pre></td></tr></table></figure>
-<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch              # 查看当前分支并列出所有分支</span><br><span class="line">git branch &lt;name&gt;       # 创建一个新的分支</span><br><span class="line">git branch -d &lt;name&gt;    # 删除某个分支</span><br><span class="line">git checkout &lt;name&gt;     # 切换到某个分支</span><br><span class="line">git checkout -b &lt;name&gt;  # 基于当前分支，创建并切换的到新分支</span><br><span class="line">git marge &lt;name&gt;        # 把某个分支合并到当前分支</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Git</category>
       </categories>
   </entry>
 </search>
