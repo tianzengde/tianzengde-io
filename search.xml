@@ -304,7 +304,7 @@
 
 ]]></content>
       <categories>
-        <category>git相关</category>
+        <category>Git</category>
       </categories>
   </entry>
   <entry>
@@ -979,6 +979,26 @@
 ]]></content>
       <categories>
         <category>笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>git命令总结</title>
+    <url>/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="Git基本配置"><a href="#Git基本配置" class="headerlink" title="Git基本配置"></a>Git基本配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --list       # 查看git基本配置</span><br><span class="line">git config --system -l  # 查看git系统配置</span><br><span class="line">git config --global -l  # 查看git用户配置</span><br></pre></td></tr></table></figure>
+<h2 id="设置用户配置"><a href="#设置用户配置" class="headerlink" title="设置用户配置"></a>设置用户配置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --system user.name &quot;用户名&quot;</span><br><span class="line">git config --system user.email 邮箱</span><br><span class="line"># 使用git时必须配置此项</span><br></pre></td></tr></table></figure>
+<h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h2 id="添加文件到暂存区"><a href="#添加文件到暂存区" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add &lt;file&gt;  # 添加指定文件到git的暂存区</span><br><span class="line">git add .       # 添加全部文件到git的暂存区</span><br></pre></td></tr></table></figure>
+<h2 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git status      # 可以查看在你上次提交之后是否有对文件进行再次修改</span><br></pre></td></tr></table></figure>
+<h2 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;提交的说明&quot;  # 把暂存区的文件提价到当前分支</span><br><span class="line">git commit -a               # 参数设置修改文件后不需要执行git add 命令，直接来提交</span><br><span class="line">git commit --amend          # 修改最近一次的提交说明</span><br></pre></td></tr></table></figure>
+<h2 id="推送文件到远程仓库"><a href="#推送文件到远程仓库" class="headerlink" title="推送文件到远程仓库"></a>推送文件到远程仓库</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push</span><br><span class="line">git push origin master      # 将本地的master分支推送到origin主机的master分支</span><br><span class="line">git push -f origin master   # 版本不同时，强行推送到远程</span><br></pre></td></tr></table></figure>
+<h2 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git blame &lt;file&gt;        # 查看指定文件的修改记录</span><br></pre></td></tr></table></figure>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset --hard        # 撤销工作区和暂存区的所有修改</span><br><span class="line">git reset --hard^       # 回退到上一个版本</span><br><span class="line">git reset --hard^^      # 回退到上上一个版本</span><br><span class="line">git reset &lt;版本号&gt;      # 回退到指定的版本</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除-1"><a href="#文件删除-1" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
+<h2 id="对远程仓库的操作"><a href="#对远程仓库的操作" class="headerlink" title="对远程仓库的操作"></a>对远程仓库的操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote              # 列出已经存在的远程分支</span><br><span class="line">git remote -v           # 列出详细信息,显示对应的克隆地址</span><br><span class="line">git remote add url      # 添加一个远程仓库</span><br><span class="line">git remote rm name      # 删除远程仓库</span><br><span class="line">git remote set-url origin [url]         # 修改远程仓库地址</span><br><span class="line">git remote rename old_name new_name     # 修改仓库名</span><br></pre></td></tr></table></figure>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch              # 查看当前分支并列出所有分支</span><br><span class="line">git branch &lt;name&gt;       # 创建一个新的分支</span><br><span class="line">git branch -d &lt;name&gt;    # 删除某个分支</span><br><span class="line">git checkout &lt;name&gt;     # 切换到某个分支</span><br><span class="line">git checkout -b &lt;name&gt;  # 基于当前分支，创建并切换的到新分支</span><br><span class="line">git marge &lt;name&gt;        # 把某个分支合并到当前分支</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Git</category>
       </categories>
   </entry>
 </search>

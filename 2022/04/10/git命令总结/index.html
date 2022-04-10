@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Linux常用命令 |  梦里花落的博客</title>
+      <title>git命令总结 |  梦里花落的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -46,7 +46,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-03.linux常用命令"
+  id="post-git命令总结"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -57,7 +57,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Linux常用命令
+  git命令总结
 </h1>
  
 
@@ -65,11 +65,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/tianzengde-io/2021/05/15/03.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
-  <time datetime="2021-05-15T14:40:56.759Z" itemprop="datePublished">2021-05-15</time>
+      <a href="/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2022-04-10T06:18:37.965Z" itemprop="datePublished">2022-04-10</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/tianzengde-io/categories/Linux%E6%93%8D%E4%BD%9C/">Linux操作</a>
+    <a class="article-category-link" href="/tianzengde-io/categories/Git/">Git</a>
   </div>
   
 <div class="word_count">
@@ -77,7 +77,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">592</span>
+            <span class="post-count">657</span>
         </span>
     </span>
 
@@ -101,32 +101,19 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="1-linux常用命令"><a href="#1-linux常用命令" class="headerlink" title="1.linux常用命令"></a>1.linux常用命令</h1><h3 id="1-1-系统命令"><a href="#1-1-系统命令" class="headerlink" title="1.1 系统命令"></a>1.1 系统命令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">runlevel                     <span class="comment"># 查看当前的运行级别（5代表图形化界面）</span></span><br><span class="line">systemctl status sshd        <span class="comment"># 开启网络服务功能</span></span><br><span class="line">          stop               <span class="comment"># 关闭</span></span><br><span class="line">          restart            <span class="comment"># 重启</span></span><br><span class="line">          reload             <span class="comment"># 重载</span></span><br><span class="line"><span class="comment"># 常见服务</span></span><br><span class="line">sshd                         <span class="comment"># ssh服务（远程xshell连接服务器的）</span></span><br><span class="line">networking                   <span class="comment"># 网络</span></span><br><span class="line"></span><br><span class="line">reboot                       <span class="comment"># 重启</span></span><br><span class="line">halt                         <span class="comment"># 关机</span></span><br><span class="line">poweroff                     <span class="comment"># 关机</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-查看文件常用指令"><a href="#1-2-查看文件常用指令" class="headerlink" title="1.2 查看文件常用指令"></a>1.2 查看文件常用指令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">touch file.txt        <span class="comment"># 创建文件</span></span><br><span class="line">vim file.txt          <span class="comment"># 写入文件</span></span><br><span class="line">cat                   <span class="comment"># 在命令提示符下查看文件内容</span></span><br><span class="line">more                  <span class="comment"># 在命令提示符中分页查看文件内容</span></span><br><span class="line">less                  <span class="comment"># 命令行中查看文件可以上下翻页反复浏览</span></span><br><span class="line">head                  <span class="comment"># 命令行中查看文件头几行</span></span><br><span class="line">tail                  <span class="comment"># 命令行中查看文件尾几行</span></span><br><span class="line">wc                    <span class="comment"># 统计文件的单词数 行数等信息</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-目录管理常用指令"><a href="#1-3-目录管理常用指令" class="headerlink" title="1.3 目录管理常用指令"></a>1.3 目录管理常用指令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;1.文件目录常用命令&#x27;&#x27;&#x27;</span></span><br><span class="line">mkdir                 <span class="comment"># 创建新目录</span></span><br><span class="line">rmdir                 <span class="comment"># 删除空目录</span></span><br><span class="line">pwd                   <span class="comment"># 查看你当前所在的目录</span></span><br><span class="line">cd                    <span class="comment"># 切换目录</span></span><br><span class="line">ls                    <span class="comment"># 查看显示目录的内容</span></span><br><span class="line">rm                    <span class="comment"># 删除文件</span></span><br><span class="line">cp                    <span class="comment"># 复制文件或目录</span></span><br><span class="line">mv                    <span class="comment"># 移动文件或目录</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">du                    <span class="comment"># 统计目录和文件空间的占用情况</span></span><br><span class="line">ln                    <span class="comment"># 创建硬链接</span></span><br><span class="line">ln -s                 <span class="comment"># 创建软链接</span></span><br><span class="line">which                 <span class="comment"># 查看linux命令所在的目录</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-账号与权限"><a href="#1-4-账号与权限" class="headerlink" title="1.4 账号与权限"></a>1.4 账号与权限</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;1.组管理&#x27;&#x27;&#x27;</span></span><br><span class="line">groupadd group_name                            <span class="comment"># 创建一个新用户组 </span></span><br><span class="line">groupdel group_name                            <span class="comment"># 删除一个用户组 </span></span><br><span class="line">groupmod -n new_group_name old_group_name      <span class="comment"># 重命名一个用户组</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;2.用户管理&#x27;&#x27;&#x27;</span></span><br><span class="line">useradd zhangsan                               <span class="comment"># 创建账户张三</span></span><br><span class="line">passwd zhangsan                                <span class="comment"># 给用户设置密码</span></span><br><span class="line">userdel -r zhangsan                            <span class="comment"># 删除张三及他的宿主目录</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;3.用户组管理&#x27;&#x27;&#x27;</span></span><br><span class="line">gpasswd -a zhangsan root                       <span class="comment"># 将张三用户加入root组</span></span><br><span class="line">groups zhangsan                                <span class="comment"># 确认zhangsan用户在root组</span></span><br><span class="line">gpasswd -d lisi root                           <span class="comment"># 将李zhangsan户从root组中删除</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;4.权限管理&#x27;&#x27;&#x27;</span></span><br><span class="line">chown -R zhangsan /aaa                         <span class="comment"># 将文件夹/aaa的多有者修改为zhangsan</span></span><br><span class="line">chown root:root /aaa                           <span class="comment"># 将/aaa文件夹的属主和属组都改成root</span></span><br><span class="line">chmod <span class="number">777</span> /aaa                 </span><br></pre></td></tr></table></figure>
-
-<h1 id="2-ubuntu开启sshd服务"><a href="#2-ubuntu开启sshd服务" class="headerlink" title="2.ubuntu开启sshd服务"></a>2.ubuntu开启sshd服务</h1><ul>
-<li>安装sshd</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@dev:shiyanlou_project<span class="comment"># sudo apt-get install openssh-server</span></span><br><span class="line">root@dev:shiyanlou_project<span class="comment"># /etc/init.d/ssh status</span></span><br><span class="line">root@dev:shiyanlou_project<span class="comment"># netstat -anptu | grep sshd</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>开启root远程登录功能</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">Port <span class="number">22</span>               <span class="comment"># 去掉注释</span></span><br><span class="line"><span class="comment">#PermitRootLogin prohibit-password</span></span><br><span class="line">PermitRootLogin yes   <span class="comment"># 把上面的换成yes</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>重启sshd服务</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@dev:shiyanlou_project<span class="comment">#  service sshd restart</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="3-ubuntu-安装软件"><a href="#3-ubuntu-安装软件" class="headerlink" title="3.ubuntu 安装软件"></a>3.ubuntu 安装软件</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 类似pip安装</span></span><br><span class="line">sudo apt-get install XXX</span><br><span class="line">sudo apt-get install -y XXX</span><br><span class="line">sudo apt-get remove XXX</span><br></pre></td></tr></table></figure>
-
- 
+  <h2 id="Git基本配置"><a href="#Git基本配置" class="headerlink" title="Git基本配置"></a>Git基本配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --list       # 查看git基本配置</span><br><span class="line">git config --system -l  # 查看git系统配置</span><br><span class="line">git config --global -l  # 查看git用户配置</span><br></pre></td></tr></table></figure>
+<h2 id="设置用户配置"><a href="#设置用户配置" class="headerlink" title="设置用户配置"></a>设置用户配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --system user.name &quot;用户名&quot;</span><br><span class="line">git config --system user.email 邮箱</span><br><span class="line"># 使用git时必须配置此项</span><br></pre></td></tr></table></figure>
+<h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h2 id="添加文件到暂存区"><a href="#添加文件到暂存区" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;  # 添加指定文件到git的暂存区</span><br><span class="line">git add .       # 添加全部文件到git的暂存区</span><br></pre></td></tr></table></figure>
+<h2 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status      # 可以查看在你上次提交之后是否有对文件进行再次修改</span><br></pre></td></tr></table></figure>
+<h2 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;提交的说明&quot;  # 把暂存区的文件提价到当前分支</span><br><span class="line">git commit -a               # 参数设置修改文件后不需要执行git add 命令，直接来提交</span><br><span class="line">git commit --amend          # 修改最近一次的提交说明</span><br></pre></td></tr></table></figure>
+<h2 id="推送文件到远程仓库"><a href="#推送文件到远程仓库" class="headerlink" title="推送文件到远程仓库"></a>推送文件到远程仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br><span class="line">git push origin master      # 将本地的master分支推送到origin主机的master分支</span><br><span class="line">git push -f origin master   # 版本不同时，强行推送到远程</span><br></pre></td></tr></table></figure>
+<h2 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git blame &lt;file&gt;        # 查看指定文件的修改记录</span><br></pre></td></tr></table></figure>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard        # 撤销工作区和暂存区的所有修改</span><br><span class="line">git reset --hard^       # 回退到上一个版本</span><br><span class="line">git reset --hard^^      # 回退到上上一个版本</span><br><span class="line">git reset &lt;版本号&gt;      # 回退到指定的版本</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
+<h2 id="文件删除-1"><a href="#文件删除-1" class="headerlink" title="文件删除"></a>文件删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt;           # 将文件从暂存区和工作区中删除</span><br><span class="line">git rm -f &lt;file&gt;        # 强行从暂存区和工作区中删除修改后的文件</span><br><span class="line">git rm --cached &lt;file&gt;  # 从暂存区中删除文件,保留工作区</span><br></pre></td></tr></table></figure>
+<h2 id="对远程仓库的操作"><a href="#对远程仓库的操作" class="headerlink" title="对远程仓库的操作"></a>对远程仓库的操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git remote              # 列出已经存在的远程分支</span><br><span class="line">git remote -v           # 列出详细信息,显示对应的克隆地址</span><br><span class="line">git remote add url      # 添加一个远程仓库</span><br><span class="line">git remote rm name      # 删除远程仓库</span><br><span class="line">git remote set-url origin [url]         # 修改远程仓库地址</span><br><span class="line">git remote rename old_name new_name     # 修改仓库名</span><br></pre></td></tr></table></figure>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git branch              # 查看当前分支并列出所有分支</span><br><span class="line">git branch &lt;name&gt;       # 创建一个新的分支</span><br><span class="line">git branch -d &lt;name&gt;    # 删除某个分支</span><br><span class="line">git checkout &lt;name&gt;     # 切换到某个分支</span><br><span class="line">git checkout -b &lt;name&gt;  # 基于当前分支，创建并切换的到新分支</span><br><span class="line">git marge &lt;name&gt;        # 把某个分支合并到当前分支</span><br></pre></td></tr></table></figure> 
       <!-- reward -->
       
     </div>
@@ -190,7 +177,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2021/05/15/03.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tianzengde.github.io/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -201,19 +188,10 @@
    
   <nav class="article-nav">
     
-      <a href="/tianzengde-io/2021/05/15/%E8%99%9A%E6%8B%9F%E6%9C%BA_CentOS--%E7%B2%BE%E5%93%81/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            CentOS7软件安装-详细版
-          
-        </div>
-      </a>
     
-    
-      <a href="/tianzengde-io/2021/05/15/CentSO%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="article-nav-link">
+      <a href="/tianzengde-io/2021/11/01/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">CentOS7软件安装</div>
+        <div class="article-nav-title">git常见操作</div>
       </a>
     
   </nav>

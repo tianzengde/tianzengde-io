@@ -6,17 +6,40 @@
   <link href="https://tianzengde.github.io/tianzengde-io/atom.xml" rel="self"/>
   
   <link href="https://tianzengde.github.io/tianzengde-io/"/>
-  <updated>2021-11-01T14:30:29.896Z</updated>
+  <updated>2022-04-10T08:24:18.442Z</updated>
   <id>https://tianzengde.github.io/tianzengde-io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git命令总结</title>
+    <link href="https://tianzengde.github.io/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
+    <id>https://tianzengde.github.io/tianzengde-io/2022/04/10/git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</id>
+    <published>2022-04-10T06:18:37.965Z</published>
+    <updated>2022-04-10T08:24:18.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Git基本配置&quot;&gt;&lt;a href=&quot;#Git基本配置&quot; class=&quot;headerlink&quot; title=&quot;Git基本配置&quot;&gt;&lt;/a&gt;Git基本配置&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="https://tianzengde.github.io/tianzengde-io/categories/Git/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>git常见操作</title>
     <link href="https://tianzengde.github.io/tianzengde-io/2021/11/01/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"/>
     <id>https://tianzengde.github.io/tianzengde-io/2021/11/01/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</id>
     <published>2021-11-01T14:23:52.529Z</published>
-    <updated>2021-11-01T14:30:29.896Z</updated>
+    <updated>2022-04-10T04:54:05.704Z</updated>
     
     
       
@@ -29,7 +52,7 @@
     
     
     
-    <category term="git相关" scheme="https://tianzengde.github.io/tianzengde-io/categories/git%E7%9B%B8%E5%85%B3/"/>
+    <category term="Git" scheme="https://tianzengde.github.io/tianzengde-io/categories/Git/"/>
     
     
   </entry>
